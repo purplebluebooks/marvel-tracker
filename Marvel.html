@@ -1,0 +1,1946 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Киновселенная Marvel — полный список</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d29;
+    --text: #e8e8ee;
+    --muted: #9aa0b4;
+    --subtle: #6b7088;
+    --accent: #ed1d24;
+    --accent-soft: #2a1518;
+    --border: #2a2e3d;
+    --hover: #232636;
+    --check: #4ade80;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+    font-size: 14px;
+  }
+  header {
+    background: linear-gradient(135deg, #1a1d29 0%, #2a1518 100%);
+    padding: 24px 20px;
+    text-align: center;
+    border-bottom: 3px solid var(--accent);
+  }
+  header h1 {
+    margin: 0 0 6px 0;
+    font-size: 1.8em;
+    letter-spacing: -0.5px;
+  }
+  header p { margin: 0; color: var(--muted); font-size: 0.9em; }
+  .header-sources { margin-bottom: 2px; }
+  .header-tagline { font-size: 0.82em; color: var(--subtle); }
+  .header-tagline a {
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--subtle);
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .header-tagline a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px 20px 40px;
+  }
+  .tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+  .tab {
+    background: none;
+    border: none;
+    color: var(--muted);
+    padding: 8px 16px;
+    font-size: 0.95em;
+    cursor: pointer;
+    font-weight: 600;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+  .tab:hover { color: var(--text); }
+  .tab.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+  .search {
+    width: 100%;
+    padding: 8px 14px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 0.95em;
+    margin-bottom: 12px;
+  }
+  .search:focus { outline: none; border-color: var(--accent); }
+  .total-banner {
+    background: linear-gradient(135deg, #1a1d29 0%, #1f1820 100%);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .total-banner-label { color: var(--muted); font-size: 0.85em; }
+  .total-banner-value { font-weight: 700; font-size: 1.15em; color: var(--accent); }
+  .phase {
+    margin-top: 18px;
+    padding: 6px 12px;
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 0.78em;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+  .phase-total {
+    font-weight: 600;
+    font-size: 0.95em;
+    color: var(--muted);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .retro-note {
+    margin-top: 14px;
+    padding: 10px 14px;
+    background: #161823;
+    border: 1px dashed var(--border);
+    border-radius: 6px;
+    color: var(--muted);
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  .list { list-style: none; padding: 0; margin: 0; }
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 12px;
+    margin: 3px 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    transition: all 0.2s;
+    gap: 10px;
+  }
+  .item:hover { background: var(--hover); }
+  .item.watched { opacity: 0.4; }
+  .item.watched .item-title { text-decoration: line-through; text-decoration-color: var(--subtle); }
+  .checkbox {
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid var(--border);
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: all 0.15s;
+  }
+  .checkbox:hover { border-color: var(--check); }
+  .checkbox.checked {
+    background: var(--check);
+    border-color: var(--check);
+  }
+  .checkbox.checked::after {
+    content: "✓";
+    color: #0f1117;
+    font-weight: 900;
+    font-size: 13px;
+    line-height: 1;
+  }
+  .item-main { flex: 1; min-width: 0; display: flex; align-items: center; flex-wrap: wrap; gap: 4px 8px; }
+  .item-title { font-weight: 600; font-size: 0.95em; }
+  .item-ru {
+    color: var(--subtle);
+    font-size: 0.85em;
+    font-style: italic;
+  }
+  .item-ru::before { content: "/ "; }
+  .item-meta { color: var(--muted); font-size: 0.8em; }
+  .item-runtime {
+    color: var(--muted);
+    font-size: 0.78em;
+    font-variant-numeric: tabular-nums;
+    margin-left: auto;
+    padding-left: 8px;
+    white-space: nowrap;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 0.65em;
+    padding: 1px 6px;
+    border-radius: 8px;
+    background: #2c3147;
+    color: #b4bbd0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .badge.tv { background: #1e3a5f; color: #8ec3f0; }
+  .badge.movie { background: #3a1e1e; color: #f08e8e; }
+  .badge.special { background: #2e1e3a; color: #c08ef0; }
+  .badge.anim { background: #1e3a2e; color: #8ef0c0; }
+  .imdb-link {
+    background: #f5c518;
+    color: #000;
+    padding: 3px 9px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.78em;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+    flex-shrink: 0;
+  }
+  .imdb-link:hover { opacity: 0.85; }
+  .hidden { display: none; }
+  .count {
+    color: var(--muted);
+    font-size: 0.85em;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .reset-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 3px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: all 0.15s;
+  }
+  .reset-btn:hover { color: var(--text); border-color: var(--accent); }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    padding: 20px 16px;
+    font-size: 0.8em;
+    border-top: 1px solid var(--border);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .footer-actions {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  .footer-btn {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: all 0.15s;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .footer-btn:hover {
+    border-color: var(--accent);
+    background: var(--hover);
+  }
+  .footer-btn.danger:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+  }
+  .footer-note {
+    color: var(--muted);
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  .footer-credits {
+    color: var(--subtle);
+    font-size: 0.82em;
+    margin-top: 8px;
+  }
+  .footer-credits a {
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--subtle);
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .footer-credits a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* Звёзды оценок */
+  .rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 1px;
+    margin-left: 8px;
+    flex-shrink: 0;
+    touch-action: manipulation;
+  }
+  .rating-star {
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #3a3f55;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: color 0.1s, transform 0.1s;
+    padding: 2px 1px;
+    line-height: 1;
+    position: relative;
+  }
+  .rating-star.filled {
+    color: #f5c518;
+  }
+  .rating-star.half {
+    background: linear-gradient(90deg, #f5c518 50%, #3a3f55 50%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .rating-star:hover {
+    transform: scale(1.15);
+  }
+  .rating-value {
+    color: var(--muted);
+    font-size: 0.75em;
+    margin-left: 4px;
+    min-width: 18px;
+    font-variant-numeric: tabular-nums;
+  }
+  .rating-clear {
+    cursor: pointer;
+    color: var(--subtle);
+    font-size: 0.7em;
+    margin-left: 2px;
+    padding: 0 4px;
+    line-height: 1;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .rating-clear:hover { color: var(--accent); }
+  /* Переключатель режимов внутри вкладки MCU */
+  .mcu-mode-toggle {
+    display: inline-flex;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 3px;
+    margin-bottom: 14px;
+    gap: 2px;
+  }
+  .mode-btn {
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    padding: 6px 14px;
+    font-size: 0.88em;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.15s;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mode-btn:hover { color: var(--text); }
+  .mode-btn.active {
+    background: var(--accent);
+    color: white;
+  }
+  .mcu-mode-pane { display: none; }
+  .mcu-mode-pane.active { display: block; }
+
+  /* Достижения */
+  .hero-card {
+    background: linear-gradient(135deg, #1a1d29 0%, #2a1518 60%, #3a1e1e 100%);
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-card::before {
+    content: "";
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(237,29,36,0.1) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-rank-label {
+    text-transform: uppercase;
+    font-size: 0.75em;
+    letter-spacing: 2px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .hero-rank-title {
+    font-size: 1.6em;
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: -0.5px;
+    margin: 0;
+  }
+  .hero-rank-sub {
+    color: var(--text);
+    font-size: 0.95em;
+    margin-top: 6px;
+    opacity: 0.9;
+  }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .hero-stat {
+    background: rgba(0,0,0,0.3);
+    border-radius: 8px;
+    padding: 10px 6px;
+  }
+  .hero-stat-value {
+    font-size: 1.4em;
+    font-weight: 800;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .hero-stat-label {
+    font-size: 0.7em;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+
+  .progress-section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 14px;
+  }
+  .progress-section-title {
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+  .progress-row {
+    margin-bottom: 12px;
+  }
+  .progress-row:last-child { margin-bottom: 0; }
+  .progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 0.88em;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .progress-name { font-weight: 600; }
+  .progress-meta {
+    color: var(--muted);
+    font-size: 0.85em;
+    font-variant-numeric: tabular-nums;
+  }
+  .progress-bar {
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent) 0%, #f5c518 100%);
+    border-radius: 4px;
+    transition: width 0.6s ease-out;
+  }
+  .progress-fill.full {
+    background: linear-gradient(90deg, var(--check) 0%, #22d3ee 100%);
+  }
+
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .achievement {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 10px;
+    text-align: center;
+    transition: all 0.2s;
+    opacity: 0.55;
+    filter: grayscale(0.5);
+    position: relative;
+  }
+  .achievement.unlocked {
+    opacity: 1;
+    filter: none;
+    border-color: var(--accent);
+    background: linear-gradient(135deg, var(--card) 0%, var(--accent-soft) 100%);
+  }
+  .achievement-progress {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    font-size: 0.65em;
+    color: var(--muted);
+    background: rgba(0,0,0,0.4);
+    padding: 1px 6px;
+    border-radius: 8px;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .achievement.unlocked .achievement-progress {
+    background: var(--check);
+    color: #0f1117;
+  }
+  .achievement-icon {
+    font-size: 1.8em;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .achievement-title {
+    font-weight: 700;
+    font-size: 0.85em;
+    margin-bottom: 3px;
+  }
+  .achievement-desc {
+    font-size: 0.72em;
+    color: var(--muted);
+    line-height: 1.3;
+  }
+  .achievement.unlocked .achievement-desc { color: var(--text); opacity: 0.8; }
+
+  .fun-fact {
+    background: linear-gradient(135deg, #161823 0%, #1f1820 100%);
+    border-left: 3px solid var(--check);
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    font-size: 0.88em;
+    color: var(--muted);
+  }
+  .fun-fact strong { color: var(--text); }
+
+  @media (max-width: 600px) {
+    header { padding: 16px 12px; }
+    header h1 { font-size: 1.3em; }
+    header p { font-size: 0.82em; }
+    main { padding: 12px 10px 30px; }
+
+    /* Вкладки горизонтально скроллятся, не ломая строку */
+    .tabs {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      gap: 2px;
+      margin-bottom: 10px;
+    }
+    .tab {
+      padding: 8px 10px;
+      font-size: 0.85em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* Переключатель режимов на мобильном — на всю ширину */
+    .mcu-mode-toggle {
+      display: flex;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .mode-btn {
+      flex: 1;
+      padding: 8px 6px;
+      font-size: 0.8em;
+      text-align: center;
+    }
+
+    /* Капсулы — компактнее, сетка из 3 колонок: чекбокс / контент / IMDb */
+    .item {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      column-gap: 10px;
+      row-gap: 4px;
+      padding: 8px 10px;
+    }
+
+    /* Контент занимает среднюю колонку и нормально переносится */
+    .item-main {
+      display: block;
+      min-width: 0;
+      width: auto;
+    }
+    .item-title {
+      display: block;
+      font-size: 0.95em;
+      line-height: 1.3;
+      word-break: normal;
+      overflow-wrap: break-word;
+    }
+    .item-ru {
+      display: block;
+      font-size: 0.8em;
+      margin-top: 1px;
+    }
+    .item-ru::before { content: ""; }
+
+    /* Бейдж и метаданные — в строку под названием */
+    .badge {
+      display: inline-block;
+      margin-top: 3px;
+      margin-right: 4px;
+      font-size: 0.6em;
+      padding: 1px 5px;
+      vertical-align: middle;
+    }
+    .item-meta {
+      display: inline-block;
+      font-size: 0.75em;
+      vertical-align: middle;
+    }
+
+    /* Длительность — на всю ширину под основным контентом */
+    .item-runtime {
+      grid-column: 2 / 4;
+      font-size: 0.75em;
+      margin: 0;
+      padding: 0;
+      color: var(--subtle);
+    }
+
+    .imdb-link {
+      padding: 4px 8px;
+      font-size: 0.72em;
+    }
+    .checkbox { width: 20px; height: 20px; }
+
+    /* Фазы и баннеры — компактнее */
+    .phase {
+      font-size: 0.72em;
+      padding: 6px 10px;
+      flex-wrap: wrap;
+    }
+    .phase-total { font-size: 0.88em; }
+    .total-banner { padding: 10px 12px; }
+    .total-banner-value { font-size: 1em; }
+    .retro-note { font-size: 0.78em; padding: 8px 10px; }
+
+    /* Достижения на мобильном: 4 плашки в две колонки по 2 */
+    .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+    .hero-stat { padding: 8px 4px; }
+    .hero-stat-value { font-size: 1.2em; }
+    .hero-stat-label { font-size: 0.65em; }
+
+    /* Звёзды на мобильном — занимают полную строку под содержимым */
+    .rating {
+      grid-column: 2 / 4;
+      margin-left: 0;
+      margin-top: 2px;
+    }
+    .rating-star { font-size: 1.5em; padding: 4px 3px; }
+    .rating-value { font-size: 0.85em; margin-left: 6px; }
+    .rating-clear { font-size: 0.9em; padding: 0 6px; }
+
+    /* Подвал на мобильном — кнопки в столбик */
+    .footer-actions { flex-direction: column; gap: 6px; }
+    .footer-btn { width: 100%; padding: 10px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>🎬 Киновселенная Marvel</h1>
+  <p class="header-sources">Полный список фильмов и сериалов — два варианта порядка просмотра</p>
+  <p class="header-tagline">Трекер MCU с оценками и достижениями · Автор: <a href="https://t.me/purplebluebooks" target="_blank">PURPLEBLUEBOOK</a></p>
+</header>
+
+<main>
+  <div class="tabs">
+    <button class="tab active" data-tab="mcu">Канон MCU</button>
+    <button class="tab" data-tab="noncanon">Вне канона MCU</button>
+    <button class="tab" data-tab="retro">Ретро-анимация</button>
+    <button class="tab" data-tab="achievements">🏆 Достижения</button>
+  </div>
+
+  <input type="text" class="search" id="search" placeholder="🔍 Поиск (рус./англ.)...">
+
+  <div id="mcu-view">
+    <div class="total-banner">
+      <span class="total-banner-label">Общая длительность MCU:</span>
+      <span class="total-banner-value" id="mcu-total"></span>
+    </div>
+    <p class="count"><span id="mcu-count"></span></p>
+
+    <div class="mcu-mode-toggle">
+      <button class="mode-btn active" data-mode="release">По дате выхода</button>
+      <button class="mode-btn" data-mode="chrono">По хронологии событий</button>
+    </div>
+
+    <div id="release-view" class="mcu-mode-pane active">
+    <div class="phase"><span>Фаза 1 — Сага Бесконечности</span><span class="phase-total" data-phase-id="p1"></span></div>
+    <ul class="list" data-phase="p1">
+      <li class="item" data-id="iron-man-1" data-mins="126"><button class="checkbox"></button><div class="item-main"><span class="item-title">Iron Man</span><span class="item-ru">Железный человек</span><span class="badge movie">Фильм</span><span class="item-meta">2008</span></div><span class="item-runtime">2 ч 06 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Iron+Man+2008">IMDb</a></li>
+      <li class="item" data-id="incredible-hulk" data-mins="112"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Incredible Hulk</span><span class="item-ru">Невероятный Халк</span><span class="badge movie">Фильм</span><span class="item-meta">2008</span></div><span class="item-runtime">1 ч 52 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=The+Incredible+Hulk+2008">IMDb</a></li>
+      <li class="item" data-id="iron-man-2" data-mins="124"><button class="checkbox"></button><div class="item-main"><span class="item-title">Iron Man 2</span><span class="item-ru">Железный человек 2</span><span class="badge movie">Фильм</span><span class="item-meta">2010</span></div><span class="item-runtime">2 ч 04 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Iron+Man+2+2010">IMDb</a></li>
+      <li class="item" data-id="thor-1" data-mins="115"><button class="checkbox"></button><div class="item-main"><span class="item-title">Thor</span><span class="item-ru">Тор</span><span class="badge movie">Фильм</span><span class="item-meta">2011</span></div><span class="item-runtime">1 ч 55 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Thor+2011">IMDb</a></li>
+      <li class="item" data-id="captain-america-1" data-mins="124"><button class="checkbox"></button><div class="item-main"><span class="item-title">Captain America: The First Avenger</span><span class="item-ru">Первый мститель</span><span class="badge movie">Фильм</span><span class="item-meta">2011</span></div><span class="item-runtime">2 ч 04 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Captain+America+The+First+Avenger">IMDb</a></li>
+      <li class="item" data-id="avengers-1" data-mins="143"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Avengers</span><span class="item-ru">Мстители</span><span class="badge movie">Фильм</span><span class="item-meta">2012</span></div><span class="item-runtime">2 ч 23 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=The+Avengers+2012">IMDb</a></li>
+    </ul>
+
+    <div class="phase"><span>Фаза 2</span><span class="phase-total" data-phase-id="p2"></span></div>
+    <ul class="list" data-phase="p2">
+      <li class="item" data-id="iron-man-3" data-mins="130"><button class="checkbox"></button><div class="item-main"><span class="item-title">Iron Man 3</span><span class="item-ru">Железный человек 3</span><span class="badge movie">Фильм</span><span class="item-meta">2013</span></div><span class="item-runtime">2 ч 10 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Iron+Man+3">IMDb</a></li>
+      <li class="item" data-id="thor-2" data-mins="112"><button class="checkbox"></button><div class="item-main"><span class="item-title">Thor: The Dark World</span><span class="item-ru">Тор: Царство тьмы</span><span class="badge movie">Фильм</span><span class="item-meta">2013</span></div><span class="item-runtime">1 ч 52 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Thor+The+Dark+World">IMDb</a></li>
+      <li class="item" data-id="winter-soldier" data-mins="136"><button class="checkbox"></button><div class="item-main"><span class="item-title">Captain America: The Winter Soldier</span><span class="item-ru">Первый мститель: Другая война</span><span class="badge movie">Фильм</span><span class="item-meta">2014</span></div><span class="item-runtime">2 ч 16 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Captain+America+The+Winter+Soldier">IMDb</a></li>
+      <li class="item" data-id="gotg-1" data-mins="121"><button class="checkbox"></button><div class="item-main"><span class="item-title">Guardians of the Galaxy</span><span class="item-ru">Стражи Галактики</span><span class="badge movie">Фильм</span><span class="item-meta">2014</span></div><span class="item-runtime">2 ч 01 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Guardians+of+the+Galaxy+2014">IMDb</a></li>
+      <li class="item" data-id="ultron" data-mins="141"><button class="checkbox"></button><div class="item-main"><span class="item-title">Avengers: Age of Ultron</span><span class="item-ru">Мстители: Эра Альтрона</span><span class="badge movie">Фильм</span><span class="item-meta">2015</span></div><span class="item-runtime">2 ч 21 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Avengers+Age+of+Ultron">IMDb</a></li>
+      <li class="item" data-id="ant-man-1" data-mins="117"><button class="checkbox"></button><div class="item-main"><span class="item-title">Ant-Man</span><span class="item-ru">Человек-муравей</span><span class="badge movie">Фильм</span><span class="item-meta">2015</span></div><span class="item-runtime">1 ч 57 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Ant-Man+2015">IMDb</a></li>
+    </ul>
+
+    <div class="phase"><span>Фаза 3</span><span class="phase-total" data-phase-id="p3"></span></div>
+    <ul class="list" data-phase="p3">
+      <li class="item" data-id="civil-war" data-mins="147"><button class="checkbox"></button><div class="item-main"><span class="item-title">Captain America: Civil War</span><span class="item-ru">Первый мститель: Противостояние</span><span class="badge movie">Фильм</span><span class="item-meta">2016</span></div><span class="item-runtime">2 ч 27 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Captain+America+Civil+War">IMDb</a></li>
+      <li class="item" data-id="doctor-strange-1" data-mins="115"><button class="checkbox"></button><div class="item-main"><span class="item-title">Doctor Strange</span><span class="item-ru">Доктор Стрэндж</span><span class="badge movie">Фильм</span><span class="item-meta">2016</span></div><span class="item-runtime">1 ч 55 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Doctor+Strange+2016">IMDb</a></li>
+      <li class="item" data-id="gotg-2" data-mins="136"><button class="checkbox"></button><div class="item-main"><span class="item-title">Guardians of the Galaxy Vol. 2</span><span class="item-ru">Стражи Галактики. Часть 2</span><span class="badge movie">Фильм</span><span class="item-meta">2017</span></div><span class="item-runtime">2 ч 16 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Guardians+of+the+Galaxy+Vol+2">IMDb</a></li>
+      <li class="item" data-id="spider-homecoming" data-mins="133"><button class="checkbox"></button><div class="item-main"><span class="item-title">Spider-Man: Homecoming</span><span class="item-ru">Человек-паук: Возвращение домой</span><span class="badge movie">Фильм</span><span class="item-meta">2017</span></div><span class="item-runtime">2 ч 13 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Spider-Man+Homecoming">IMDb</a></li>
+      <li class="item" data-id="ragnarok" data-mins="130"><button class="checkbox"></button><div class="item-main"><span class="item-title">Thor: Ragnarok</span><span class="item-ru">Тор: Рагнарёк</span><span class="badge movie">Фильм</span><span class="item-meta">2017</span></div><span class="item-runtime">2 ч 10 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Thor+Ragnarok">IMDb</a></li>
+      <li class="item" data-id="black-panther-1" data-mins="134"><button class="checkbox"></button><div class="item-main"><span class="item-title">Black Panther</span><span class="item-ru">Чёрная Пантера</span><span class="badge movie">Фильм</span><span class="item-meta">2018</span></div><span class="item-runtime">2 ч 14 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Black+Panther+2018">IMDb</a></li>
+      <li class="item" data-id="infinity-war" data-mins="149"><button class="checkbox"></button><div class="item-main"><span class="item-title">Avengers: Infinity War</span><span class="item-ru">Мстители: Война бесконечности</span><span class="badge movie">Фильм</span><span class="item-meta">2018</span></div><span class="item-runtime">2 ч 29 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Avengers+Infinity+War">IMDb</a></li>
+      <li class="item" data-id="ant-man-2" data-mins="118"><button class="checkbox"></button><div class="item-main"><span class="item-title">Ant-Man and the Wasp</span><span class="item-ru">Человек-муравей и Оса</span><span class="badge movie">Фильм</span><span class="item-meta">2018</span></div><span class="item-runtime">1 ч 58 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Ant-Man+and+the+Wasp">IMDb</a></li>
+      <li class="item" data-id="captain-marvel" data-mins="123"><button class="checkbox"></button><div class="item-main"><span class="item-title">Captain Marvel</span><span class="item-ru">Капитан Марвел</span><span class="badge movie">Фильм</span><span class="item-meta">2019</span></div><span class="item-runtime">2 ч 03 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Captain+Marvel+2019">IMDb</a></li>
+      <li class="item" data-id="endgame" data-mins="181"><button class="checkbox"></button><div class="item-main"><span class="item-title">Avengers: Endgame</span><span class="item-ru">Мстители: Финал</span><span class="badge movie">Фильм</span><span class="item-meta">2019</span></div><span class="item-runtime">3 ч 01 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Avengers+Endgame">IMDb</a></li>
+      <li class="item" data-id="far-from-home" data-mins="129"><button class="checkbox"></button><div class="item-main"><span class="item-title">Spider-Man: Far From Home</span><span class="item-ru">Человек-паук: Вдали от дома</span><span class="badge movie">Фильм</span><span class="item-meta">2019</span></div><span class="item-runtime">2 ч 09 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Spider-Man+Far+From+Home">IMDb</a></li>
+    </ul>
+
+    <div class="phase"><span>Фаза 4 — Сага мультивселенной</span><span class="phase-total" data-phase-id="p4"></span></div>
+    <ul class="list" data-phase="p4">
+      <li class="item" data-id="wandavision" data-mins="363"><button class="checkbox"></button><div class="item-main"><span class="item-title">WandaVision</span><span class="item-ru">ВандаВижн</span><span class="badge tv">Сериал</span><span class="item-meta">2021</span></div><span class="item-runtime">6 ч 03 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=WandaVision">IMDb</a></li>
+      <li class="item" data-id="falcon-ws" data-mins="330"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Falcon and the Winter Soldier</span><span class="item-ru">Сокол и Зимний Солдат</span><span class="badge tv">Сериал</span><span class="item-meta">2021</span></div><span class="item-runtime">5 ч 30 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Falcon+and+the+Winter+Soldier">IMDb</a></li>
+      <li class="item" data-id="loki-s1" data-mins="302"><button class="checkbox"></button><div class="item-main"><span class="item-title">Loki (Сезон 1)</span><span class="item-ru">Локи</span><span class="badge tv">Сериал</span><span class="item-meta">2021</span></div><span class="item-runtime">5 ч 02 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Loki+series">IMDb</a></li>
+      <li class="item" data-id="black-widow" data-mins="134"><button class="checkbox"></button><div class="item-main"><span class="item-title">Black Widow</span><span class="item-ru">Чёрная Вдова</span><span class="badge movie">Фильм</span><span class="item-meta">2021</span></div><span class="item-runtime">2 ч 14 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Black+Widow+2021">IMDb</a></li>
+      <li class="item" data-id="what-if-s1" data-mins="322"><button class="checkbox"></button><div class="item-main"><span class="item-title">What If...? (Сезон 1)</span><span class="item-ru">Что, если…?</span><span class="badge anim">Анимация</span><span class="item-meta">2021</span></div><span class="item-runtime">5 ч 22 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=What+If+Marvel">IMDb</a></li>
+      <li class="item" data-id="shang-chi" data-mins="132"><button class="checkbox"></button><div class="item-main"><span class="item-title">Shang-Chi and the Legend of the Ten Rings</span><span class="item-ru">Шан-Чи и легенда десяти колец</span><span class="badge movie">Фильм</span><span class="item-meta">2021</span></div><span class="item-runtime">2 ч 12 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Shang-Chi">IMDb</a></li>
+      <li class="item" data-id="eternals" data-mins="156"><button class="checkbox"></button><div class="item-main"><span class="item-title">Eternals</span><span class="item-ru">Вечные</span><span class="badge movie">Фильм</span><span class="item-meta">2021</span></div><span class="item-runtime">2 ч 36 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Eternals+2021">IMDb</a></li>
+      <li class="item" data-id="hawkeye" data-mins="297"><button class="checkbox"></button><div class="item-main"><span class="item-title">Hawkeye</span><span class="item-ru">Соколиный глаз</span><span class="badge tv">Сериал</span><span class="item-meta">2021</span></div><span class="item-runtime">4 ч 57 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Hawkeye+series">IMDb</a></li>
+      <li class="item" data-id="no-way-home" data-mins="148"><button class="checkbox"></button><div class="item-main"><span class="item-title">Spider-Man: No Way Home</span><span class="item-ru">Человек-паук: Нет пути домой</span><span class="badge movie">Фильм</span><span class="item-meta">2021</span></div><span class="item-runtime">2 ч 28 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Spider-Man+No+Way+Home">IMDb</a></li>
+      <li class="item" data-id="moon-knight" data-mins="303"><button class="checkbox"></button><div class="item-main"><span class="item-title">Moon Knight</span><span class="item-ru">Лунный рыцарь</span><span class="badge tv">Сериал</span><span class="item-meta">2022</span></div><span class="item-runtime">5 ч 03 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Moon+Knight">IMDb</a></li>
+      <li class="item" data-id="ds-multiverse" data-mins="126"><button class="checkbox"></button><div class="item-main"><span class="item-title">Doctor Strange in the Multiverse of Madness</span><span class="item-ru">Доктор Стрэндж: В мультивселенной безумия</span><span class="badge movie">Фильм</span><span class="item-meta">2022</span></div><span class="item-runtime">2 ч 06 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Doctor+Strange+Multiverse+of+Madness">IMDb</a></li>
+      <li class="item" data-id="ms-marvel" data-mins="289"><button class="checkbox"></button><div class="item-main"><span class="item-title">Ms. Marvel</span><span class="item-ru">Мисс Марвел</span><span class="badge tv">Сериал</span><span class="item-meta">2022</span></div><span class="item-runtime">4 ч 49 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Ms+Marvel">IMDb</a></li>
+      <li class="item" data-id="love-thunder" data-mins="119"><button class="checkbox"></button><div class="item-main"><span class="item-title">Thor: Love and Thunder</span><span class="item-ru">Тор: Любовь и гром</span><span class="badge movie">Фильм</span><span class="item-meta">2022</span></div><span class="item-runtime">1 ч 59 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Thor+Love+and+Thunder">IMDb</a></li>
+      <li class="item" data-id="i-am-groot-s1" data-mins="25"><button class="checkbox"></button><div class="item-main"><span class="item-title">I Am Groot (Сезон 1)</span><span class="item-ru">Я есть Грут</span><span class="badge anim">Анимация</span><span class="item-meta">2022</span></div><span class="item-runtime">25 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=I+Am+Groot">IMDb</a></li>
+      <li class="item" data-id="she-hulk" data-mins="309"><button class="checkbox"></button><div class="item-main"><span class="item-title">She-Hulk: Attorney at Law</span><span class="item-ru">Женщина-Халк: Адвокат</span><span class="badge tv">Сериал</span><span class="item-meta">2022</span></div><span class="item-runtime">5 ч 09 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=She-Hulk+Attorney+at+Law">IMDb</a></li>
+      <li class="item" data-id="werewolf" data-mins="52"><button class="checkbox"></button><div class="item-main"><span class="item-title">Werewolf by Night</span><span class="item-ru">Оборотень ночью</span><span class="badge special">Спецвыпуск</span><span class="item-meta">2022</span></div><span class="item-runtime">52 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Werewolf+by+Night+Marvel">IMDb</a></li>
+      <li class="item" data-id="wakanda-forever" data-mins="161"><button class="checkbox"></button><div class="item-main"><span class="item-title">Black Panther: Wakanda Forever</span><span class="item-ru">Чёрная Пантера: Ваканда навеки</span><span class="badge movie">Фильм</span><span class="item-meta">2022</span></div><span class="item-runtime">2 ч 41 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Black+Panther+Wakanda+Forever">IMDb</a></li>
+      <li class="item" data-id="gotg-holiday" data-mins="42"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Guardians of the Galaxy Holiday Special</span><span class="item-ru">Стражи Галактики: Праздничный спецвыпуск</span><span class="badge special">Спецвыпуск</span><span class="item-meta">2022</span></div><span class="item-runtime">42 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Guardians+of+the+Galaxy+Holiday+Special">IMDb</a></li>
+    </ul>
+
+    <div class="phase"><span>Фаза 5</span><span class="phase-total" data-phase-id="p5"></span></div>
+    <ul class="list" data-phase="p5">
+      <li class="item" data-id="quantumania" data-mins="124"><button class="checkbox"></button><div class="item-main"><span class="item-title">Ant-Man and the Wasp: Quantumania</span><span class="item-ru">Человек-муравей и Оса: Квантомания</span><span class="badge movie">Фильм</span><span class="item-meta">2023</span></div><span class="item-runtime">2 ч 04 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Ant-Man+Quantumania">IMDb</a></li>
+      <li class="item" data-id="secret-invasion" data-mins="272"><button class="checkbox"></button><div class="item-main"><span class="item-title">Secret Invasion</span><span class="item-ru">Тайное вторжение</span><span class="badge tv">Сериал</span><span class="item-meta">2023</span></div><span class="item-runtime">4 ч 32 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Secret+Invasion+Marvel">IMDb</a></li>
+      <li class="item" data-id="gotg-3" data-mins="150"><button class="checkbox"></button><div class="item-main"><span class="item-title">Guardians of the Galaxy Vol. 3</span><span class="item-ru">Стражи Галактики. Часть 3</span><span class="badge movie">Фильм</span><span class="item-meta">2023</span></div><span class="item-runtime">2 ч 30 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Guardians+of+the+Galaxy+Vol+3">IMDb</a></li>
+      <li class="item" data-id="loki-s2" data-mins="313"><button class="checkbox"></button><div class="item-main"><span class="item-title">Loki (Сезон 2)</span><span class="item-ru">Локи</span><span class="badge tv">Сериал</span><span class="item-meta">2023</span></div><span class="item-runtime">5 ч 13 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Loki+series">IMDb</a></li>
+      <li class="item" data-id="marvels" data-mins="105"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Marvels</span><span class="item-ru">Марвелы</span><span class="badge movie">Фильм</span><span class="item-meta">2023</span></div><span class="item-runtime">1 ч 45 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=The+Marvels+2023">IMDb</a></li>
+      <li class="item" data-id="what-if-s2" data-mins="292"><button class="checkbox"></button><div class="item-main"><span class="item-title">What If...? (Сезон 2)</span><span class="item-ru">Что, если…?</span><span class="badge anim">Анимация</span><span class="item-meta">2023</span></div><span class="item-runtime">4 ч 52 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=What+If+Marvel">IMDb</a></li>
+      <li class="item" data-id="i-am-groot-s2" data-mins="25"><button class="checkbox"></button><div class="item-main"><span class="item-title">I Am Groot (Сезон 2)</span><span class="item-ru">Я есть Грут</span><span class="badge anim">Анимация</span><span class="item-meta">2023</span></div><span class="item-runtime">25 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=I+Am+Groot">IMDb</a></li>
+      <li class="item" data-id="echo" data-mins="215"><button class="checkbox"></button><div class="item-main"><span class="item-title">Echo</span><span class="item-ru">Эхо</span><span class="badge tv">Сериал</span><span class="item-meta">2024</span></div><span class="item-runtime">3 ч 35 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Echo+Marvel">IMDb</a></li>
+      <li class="item" data-id="xmen-97-s1" data-mins="344"><button class="checkbox"></button><div class="item-main"><span class="item-title">X-Men '97 (Сезон 1)</span><span class="item-ru">Люди Икс '97</span><span class="badge anim">Анимация</span><span class="item-meta">2024</span></div><span class="item-runtime">5 ч 44 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=X-Men+97">IMDb</a></li>
+      <li class="item" data-id="deadpool-wolverine" data-mins="128"><button class="checkbox"></button><div class="item-main"><span class="item-title">Deadpool & Wolverine</span><span class="item-ru">Дэдпул и Росомаха</span><span class="badge movie">Фильм</span><span class="item-meta">2024</span></div><span class="item-runtime">2 ч 08 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Deadpool+and+Wolverine">IMDb</a></li>
+      <li class="item" data-id="agatha" data-mins="379"><button class="checkbox"></button><div class="item-main"><span class="item-title">Agatha All Along</span><span class="item-ru">Агата с самого начала</span><span class="badge tv">Сериал</span><span class="item-meta">2024</span></div><span class="item-runtime">6 ч 19 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Agatha+All+Along">IMDb</a></li>
+      <li class="item" data-id="what-if-s3" data-mins="270"><button class="checkbox"></button><div class="item-main"><span class="item-title">What If...? (Сезон 3)</span><span class="item-ru">Что, если…?</span><span class="badge anim">Анимация</span><span class="item-meta">2024</span></div><span class="item-runtime">4 ч 30 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=What+If+Marvel">IMDb</a></li>
+      <li class="item" data-id="friendly-spider" data-mins="252"><button class="checkbox"></button><div class="item-main"><span class="item-title">Your Friendly Neighborhood Spider-Man</span><span class="item-ru">Дружелюбный сосед Человек-паук</span><span class="badge anim">Анимация</span><span class="item-meta">2025</span></div><span class="item-runtime">4 ч 12 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Your+Friendly+Neighborhood+Spider-Man">IMDb</a></li>
+      <li class="item" data-id="daredevil-ba-s1" data-mins="495"><button class="checkbox"></button><div class="item-main"><span class="item-title">Daredevil: Born Again (Сезон 1)</span><span class="item-ru">Сорвиголова: Рождённый заново</span><span class="badge tv">Сериал</span><span class="item-meta">2025</span></div><span class="item-runtime">8 ч 15 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Daredevil+Born+Again">IMDb</a></li>
+      <li class="item" data-id="brave-new-world" data-mins="118"><button class="checkbox"></button><div class="item-main"><span class="item-title">Captain America: Brave New World</span><span class="item-ru">Капитан Америка: Дивный новый мир</span><span class="badge movie">Фильм</span><span class="item-meta">2025</span></div><span class="item-runtime">1 ч 58 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Captain+America+Brave+New+World">IMDb</a></li>
+      <li class="item" data-id="thunderbolts" data-mins="126"><button class="checkbox"></button><div class="item-main"><span class="item-title">Thunderbolts*</span><span class="item-ru">Громовержцы*</span><span class="badge movie">Фильм</span><span class="item-meta">2025</span></div><span class="item-runtime">2 ч 06 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Thunderbolts+Marvel">IMDb</a></li>
+      <li class="item" data-id="ironheart" data-mins="360"><button class="checkbox"></button><div class="item-main"><span class="item-title">Ironheart</span><span class="item-ru">Железное сердце</span><span class="badge tv">Сериал</span><span class="item-meta">2025</span></div><span class="item-runtime">6 ч 00 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Ironheart+Marvel">IMDb</a></li>
+      <li class="item" data-id="eyes-wakanda" data-mins="100"><button class="checkbox"></button><div class="item-main"><span class="item-title">Eyes of Wakanda</span><span class="item-ru">Глаза Ваканды</span><span class="badge anim">Анимация</span><span class="item-meta">2025</span></div><span class="item-runtime">1 ч 40 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Eyes+of+Wakanda">IMDb</a></li>
+      <li class="item" data-id="ff-first-steps" data-mins="115"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Fantastic Four: First Steps</span><span class="item-ru">Фантастическая четвёрка: Первые шаги</span><span class="badge movie">Фильм</span><span class="item-meta">2025</span></div><span class="item-runtime">1 ч 55 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Fantastic+Four+First+Steps">IMDb</a></li>
+      <li class="item" data-id="marvel-zombies" data-mins="180"><button class="checkbox"></button><div class="item-main"><span class="item-title">Marvel Zombies</span><span class="item-ru">Зомби Marvel</span><span class="badge anim">Анимация</span><span class="item-meta">2025</span></div><span class="item-runtime">3 ч 00 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Marvel+Zombies">IMDb</a></li>
+      <li class="item" data-id="wonder-man" data-mins="360"><button class="checkbox"></button><div class="item-main"><span class="item-title">Wonder Man</span><span class="item-ru">Чудо-человек</span><span class="badge tv">Сериал</span><span class="item-meta">2025</span></div><span class="item-runtime">6 ч 00 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Wonder+Man+Marvel">IMDb</a></li>
+      <li class="item" data-id="daredevil-ba-s2" data-mins="360"><button class="checkbox"></button><div class="item-main"><span class="item-title">Daredevil: Born Again (Сезон 2)</span><span class="item-ru">Сорвиголова: Рождённый заново</span><span class="badge tv">Сериал</span><span class="item-meta">2026</span></div><span class="item-runtime">6 ч 00 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Daredevil+Born+Again">IMDb</a></li>
+    </ul>
+
+    <div class="phase"><span>Фаза 6 — Грядущее</span><span class="phase-total" data-phase-id="p6"></span></div>
+    <ul class="list" data-phase="p6">
+      <li class="item" data-id="brand-new-day" data-mins="0" data-unreleased="1"><button class="checkbox"></button><div class="item-main"><span class="item-title">Spider-Man: Brand New Day</span><span class="item-ru">Человек-паук: Новый день</span><span class="badge movie">Фильм</span><span class="item-meta">2026 (ожидается)</span></div><span class="item-runtime">—</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Spider-Man+Brand+New+Day">IMDb</a></li>
+      <li class="item" data-id="doomsday" data-mins="0" data-unreleased="1"><button class="checkbox"></button><div class="item-main"><span class="item-title">Avengers: Doomsday</span><span class="item-ru">Мстители: Судный день</span><span class="badge movie">Фильм</span><span class="item-meta">2026 (ожидается)</span></div><span class="item-runtime">—</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Avengers+Doomsday">IMDb</a></li>
+      <li class="item" data-id="secret-wars" data-mins="0" data-unreleased="1"><button class="checkbox"></button><div class="item-main"><span class="item-title">Avengers: Secret Wars</span><span class="item-ru">Мстители: Секретные войны</span><span class="badge movie">Фильм</span><span class="item-meta">2027 (ожидается)</span></div><span class="item-runtime">—</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Avengers+Secret+Wars">IMDb</a></li>
+    </ul>
+  </div>
+
+  <div id="chrono-view" class="mcu-mode-pane">
+    <div class="phase"><span>До современной эпохи</span></div>
+    <ul class="list">
+      <li class="item" data-id="eyes-wakanda" data-mins="100"><button class="checkbox"></button><div class="item-main"><span class="item-title">Eyes of Wakanda</span><span class="item-ru">Глаза Ваканды</span><span class="badge anim">Анимация</span><span class="item-meta">Бронзовый век — XIX век</span></div><span class="item-runtime">1 ч 40 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Eyes+of+Wakanda">IMDb</a></li>
+      <li class="item" data-id="captain-america-1" data-mins="124"><button class="checkbox"></button><div class="item-main"><span class="item-title">Captain America: The First Avenger</span><span class="item-ru">Первый мститель</span><span class="badge movie">Фильм</span><span class="item-meta">1942–1945</span></div><span class="item-runtime">2 ч 04 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Captain+America+The+First+Avenger">IMDb</a></li>
+      <li class="item" data-id="captain-marvel" data-mins="123"><button class="checkbox"></button><div class="item-main"><span class="item-title">Captain Marvel</span><span class="item-ru">Капитан Марвел</span><span class="badge movie">Фильм</span><span class="item-meta">1995</span></div><span class="item-runtime">2 ч 03 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Captain+Marvel+2019">IMDb</a></li>
+
+    <div class="phase"><span>Эпоха Мстителей (2008–2012)</span></div>
+      <li class="item" data-id="iron-man-1" data-mins="126"><button class="checkbox"></button><div class="item-main"><span class="item-title">Iron Man</span><span class="item-ru">Железный человек</span><span class="badge movie">Фильм</span><span class="item-meta">2010</span></div><span class="item-runtime">2 ч 06 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Iron+Man+2008">IMDb</a></li>
+      <li class="item" data-id="iron-man-2" data-mins="124"><button class="checkbox"></button><div class="item-main"><span class="item-title">Iron Man 2</span><span class="item-ru">Железный человек 2</span><span class="badge movie">Фильм</span><span class="item-meta">2011</span></div><span class="item-runtime">2 ч 04 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Iron+Man+2+2010">IMDb</a></li>
+      <li class="item" data-id="incredible-hulk" data-mins="112"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Incredible Hulk</span><span class="item-ru">Невероятный Халк</span><span class="badge movie">Фильм</span><span class="item-meta">2011</span></div><span class="item-runtime">1 ч 52 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=The+Incredible+Hulk+2008">IMDb</a></li>
+      <li class="item" data-id="thor-1" data-mins="115"><button class="checkbox"></button><div class="item-main"><span class="item-title">Thor</span><span class="item-ru">Тор</span><span class="badge movie">Фильм</span><span class="item-meta">2011</span></div><span class="item-runtime">1 ч 55 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Thor+2011">IMDb</a></li>
+      <li class="item" data-id="avengers-1" data-mins="143"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Avengers</span><span class="item-ru">Мстители</span><span class="badge movie">Фильм</span><span class="item-meta">2012 — Битва за Нью-Йорк</span></div><span class="item-runtime">2 ч 23 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=The+Avengers+2012">IMDb</a></li>
+
+    <div class="phase"><span>Между Мстителями (2013–2015)</span></div>
+      <li class="item" data-id="iron-man-3" data-mins="130"><button class="checkbox"></button><div class="item-main"><span class="item-title">Iron Man 3</span><span class="item-ru">Железный человек 3</span><span class="badge movie">Фильм</span><span class="item-meta">2013</span></div><span class="item-runtime">2 ч 10 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Iron+Man+3">IMDb</a></li>
+      <li class="item" data-id="thor-2" data-mins="112"><button class="checkbox"></button><div class="item-main"><span class="item-title">Thor: The Dark World</span><span class="item-ru">Тор: Царство тьмы</span><span class="badge movie">Фильм</span><span class="item-meta">2013</span></div><span class="item-runtime">1 ч 52 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Thor+The+Dark+World">IMDb</a></li>
+      <li class="item" data-id="winter-soldier" data-mins="136"><button class="checkbox"></button><div class="item-main"><span class="item-title">Captain America: The Winter Soldier</span><span class="item-ru">Первый мститель: Другая война</span><span class="badge movie">Фильм</span><span class="item-meta">2014</span></div><span class="item-runtime">2 ч 16 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Captain+America+The+Winter+Soldier">IMDb</a></li>
+      <li class="item" data-id="gotg-1" data-mins="121"><button class="checkbox"></button><div class="item-main"><span class="item-title">Guardians of the Galaxy</span><span class="item-ru">Стражи Галактики</span><span class="badge movie">Фильм</span><span class="item-meta">2014</span></div><span class="item-runtime">2 ч 01 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Guardians+of+the+Galaxy+2014">IMDb</a></li>
+      <li class="item" data-id="gotg-2" data-mins="136"><button class="checkbox"></button><div class="item-main"><span class="item-title">Guardians of the Galaxy Vol. 2</span><span class="item-ru">Стражи Галактики. Часть 2</span><span class="badge movie">Фильм</span><span class="item-meta">2014</span></div><span class="item-runtime">2 ч 16 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Guardians+of+the+Galaxy+Vol+2">IMDb</a></li>
+      <li class="item" data-id="ultron" data-mins="141"><button class="checkbox"></button><div class="item-main"><span class="item-title">Avengers: Age of Ultron</span><span class="item-ru">Мстители: Эра Альтрона</span><span class="badge movie">Фильм</span><span class="item-meta">2015</span></div><span class="item-runtime">2 ч 21 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Avengers+Age+of+Ultron">IMDb</a></li>
+      <li class="item" data-id="ant-man-1" data-mins="117"><button class="checkbox"></button><div class="item-main"><span class="item-title">Ant-Man</span><span class="item-ru">Человек-муравей</span><span class="badge movie">Фильм</span><span class="item-meta">2015</span></div><span class="item-runtime">1 ч 57 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Ant-Man+2015">IMDb</a></li>
+
+    <div class="phase"><span>Гражданская война и после (2016–2017)</span></div>
+      <li class="item" data-id="civil-war" data-mins="147"><button class="checkbox"></button><div class="item-main"><span class="item-title">Captain America: Civil War</span><span class="item-ru">Первый мститель: Противостояние</span><span class="badge movie">Фильм</span><span class="item-meta">2016</span></div><span class="item-runtime">2 ч 27 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Captain+America+Civil+War">IMDb</a></li>
+      <li class="item" data-id="black-widow" data-mins="134"><button class="checkbox"></button><div class="item-main"><span class="item-title">Black Widow</span><span class="item-ru">Чёрная Вдова</span><span class="badge movie">Фильм</span><span class="item-meta">2016</span></div><span class="item-runtime">2 ч 14 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Black+Widow+2021">IMDb</a></li>
+      <li class="item" data-id="spider-homecoming" data-mins="133"><button class="checkbox"></button><div class="item-main"><span class="item-title">Spider-Man: Homecoming</span><span class="item-ru">Человек-паук: Возвращение домой</span><span class="badge movie">Фильм</span><span class="item-meta">2016</span></div><span class="item-runtime">2 ч 13 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Spider-Man+Homecoming">IMDb</a></li>
+      <li class="item" data-id="doctor-strange-1" data-mins="115"><button class="checkbox"></button><div class="item-main"><span class="item-title">Doctor Strange</span><span class="item-ru">Доктор Стрэндж</span><span class="badge movie">Фильм</span><span class="item-meta">2016–2017</span></div><span class="item-runtime">1 ч 55 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Doctor+Strange+2016">IMDb</a></li>
+      <li class="item" data-id="black-panther-1" data-mins="134"><button class="checkbox"></button><div class="item-main"><span class="item-title">Black Panther</span><span class="item-ru">Чёрная Пантера</span><span class="badge movie">Фильм</span><span class="item-meta">2017</span></div><span class="item-runtime">2 ч 14 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Black+Panther+2018">IMDb</a></li>
+      <li class="item" data-id="ragnarok" data-mins="130"><button class="checkbox"></button><div class="item-main"><span class="item-title">Thor: Ragnarok</span><span class="item-ru">Тор: Рагнарёк</span><span class="badge movie">Фильм</span><span class="item-meta">2017</span></div><span class="item-runtime">2 ч 10 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Thor+Ragnarok">IMDb</a></li>
+
+    <div class="phase"><span>Война Бесконечности и Финал (2018–2023)</span></div>
+      <li class="item" data-id="infinity-war" data-mins="149"><button class="checkbox"></button><div class="item-main"><span class="item-title">Avengers: Infinity War</span><span class="item-ru">Мстители: Война бесконечности</span><span class="badge movie">Фильм</span><span class="item-meta">2018 — Щелчок</span></div><span class="item-runtime">2 ч 29 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Avengers+Infinity+War">IMDb</a></li>
+      <li class="item" data-id="ant-man-2" data-mins="118"><button class="checkbox"></button><div class="item-main"><span class="item-title">Ant-Man and the Wasp</span><span class="item-ru">Человек-муравей и Оса</span><span class="badge movie">Фильм</span><span class="item-meta">2018</span></div><span class="item-runtime">1 ч 58 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Ant-Man+and+the+Wasp">IMDb</a></li>
+      <li class="item" data-id="endgame" data-mins="181"><button class="checkbox"></button><div class="item-main"><span class="item-title">Avengers: Endgame</span><span class="item-ru">Мстители: Финал</span><span class="badge movie">Фильм</span><span class="item-meta">2018 / 2023</span></div><span class="item-runtime">3 ч 01 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Avengers+Endgame">IMDb</a></li>
+      <li class="item" data-id="loki-s1" data-mins="302"><button class="checkbox"></button><div class="item-main"><span class="item-title">Loki (Сезон 1)</span><span class="item-ru">Локи</span><span class="badge tv">Сериал</span><span class="item-meta">Вне времени</span></div><span class="item-runtime">5 ч 02 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Loki+series">IMDb</a></li>
+      <li class="item" data-id="what-if-s1" data-mins="322"><button class="checkbox"></button><div class="item-main"><span class="item-title">What If...? (Сезон 1)</span><span class="item-ru">Что, если…?</span><span class="badge anim">Анимация</span><span class="item-meta">Альт. реальности</span></div><span class="item-runtime">5 ч 22 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=What+If+Marvel">IMDb</a></li>
+      <li class="item" data-id="what-if-s2" data-mins="292"><button class="checkbox"></button><div class="item-main"><span class="item-title">What If...? (Сезон 2)</span><span class="item-ru">Что, если…?</span><span class="badge anim">Анимация</span><span class="item-meta">Альт. реальности</span></div><span class="item-runtime">4 ч 52 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=What+If+Marvel">IMDb</a></li>
+      <li class="item" data-id="what-if-s3" data-mins="270"><button class="checkbox"></button><div class="item-main"><span class="item-title">What If...? (Сезон 3)</span><span class="item-ru">Что, если…?</span><span class="badge anim">Анимация</span><span class="item-meta">Альт. реальности</span></div><span class="item-runtime">4 ч 30 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=What+If+Marvel">IMDb</a></li>
+      <li class="item" data-id="far-from-home" data-mins="129"><button class="checkbox"></button><div class="item-main"><span class="item-title">Spider-Man: Far From Home</span><span class="item-ru">Человек-паук: Вдали от дома</span><span class="badge movie">Фильм</span><span class="item-meta">2024</span></div><span class="item-runtime">2 ч 09 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Spider-Man+Far+From+Home">IMDb</a></li>
+      <li class="item" data-id="wandavision" data-mins="363"><button class="checkbox"></button><div class="item-main"><span class="item-title">WandaVision</span><span class="item-ru">ВандаВижн</span><span class="badge tv">Сериал</span><span class="item-meta">2024</span></div><span class="item-runtime">6 ч 03 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=WandaVision">IMDb</a></li>
+      <li class="item" data-id="falcon-ws" data-mins="330"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Falcon and the Winter Soldier</span><span class="item-ru">Сокол и Зимний Солдат</span><span class="badge tv">Сериал</span><span class="item-meta">2024</span></div><span class="item-runtime">5 ч 30 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Falcon+and+the+Winter+Soldier">IMDb</a></li>
+      <li class="item" data-id="shang-chi" data-mins="132"><button class="checkbox"></button><div class="item-main"><span class="item-title">Shang-Chi and the Legend of the Ten Rings</span><span class="item-ru">Шан-Чи и легенда десяти колец</span><span class="badge movie">Фильм</span><span class="item-meta">2024</span></div><span class="item-runtime">2 ч 12 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Shang-Chi">IMDb</a></li>
+      <li class="item" data-id="eternals" data-mins="156"><button class="checkbox"></button><div class="item-main"><span class="item-title">Eternals</span><span class="item-ru">Вечные</span><span class="badge movie">Фильм</span><span class="item-meta">2024</span></div><span class="item-runtime">2 ч 36 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Eternals+2021">IMDb</a></li>
+      <li class="item" data-id="no-way-home" data-mins="148"><button class="checkbox"></button><div class="item-main"><span class="item-title">Spider-Man: No Way Home</span><span class="item-ru">Человек-паук: Нет пути домой</span><span class="badge movie">Фильм</span><span class="item-meta">2024</span></div><span class="item-runtime">2 ч 28 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Spider-Man+No+Way+Home">IMDb</a></li>
+      <li class="item" data-id="hawkeye" data-mins="297"><button class="checkbox"></button><div class="item-main"><span class="item-title">Hawkeye</span><span class="item-ru">Соколиный глаз</span><span class="badge tv">Сериал</span><span class="item-meta">Декабрь 2024</span></div><span class="item-runtime">4 ч 57 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Hawkeye+series">IMDb</a></li>
+      <li class="item" data-id="moon-knight" data-mins="303"><button class="checkbox"></button><div class="item-main"><span class="item-title">Moon Knight</span><span class="item-ru">Лунный рыцарь</span><span class="badge tv">Сериал</span><span class="item-meta">2025</span></div><span class="item-runtime">5 ч 03 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Moon+Knight">IMDb</a></li>
+      <li class="item" data-id="ds-multiverse" data-mins="126"><button class="checkbox"></button><div class="item-main"><span class="item-title">Doctor Strange in the Multiverse of Madness</span><span class="item-ru">Доктор Стрэндж: В мультивселенной безумия</span><span class="badge movie">Фильм</span><span class="item-meta">2025</span></div><span class="item-runtime">2 ч 06 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Doctor+Strange+Multiverse+of+Madness">IMDb</a></li>
+      <li class="item" data-id="ms-marvel" data-mins="289"><button class="checkbox"></button><div class="item-main"><span class="item-title">Ms. Marvel</span><span class="item-ru">Мисс Марвел</span><span class="badge tv">Сериал</span><span class="item-meta">2025</span></div><span class="item-runtime">4 ч 49 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Ms+Marvel">IMDb</a></li>
+      <li class="item" data-id="love-thunder" data-mins="119"><button class="checkbox"></button><div class="item-main"><span class="item-title">Thor: Love and Thunder</span><span class="item-ru">Тор: Любовь и гром</span><span class="badge movie">Фильм</span><span class="item-meta">2025</span></div><span class="item-runtime">1 ч 59 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Thor+Love+and+Thunder">IMDb</a></li>
+      <li class="item" data-id="she-hulk" data-mins="309"><button class="checkbox"></button><div class="item-main"><span class="item-title">She-Hulk: Attorney at Law</span><span class="item-ru">Женщина-Халк: Адвокат</span><span class="badge tv">Сериал</span><span class="item-meta">2025</span></div><span class="item-runtime">5 ч 09 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=She-Hulk+Attorney+at+Law">IMDb</a></li>
+      <li class="item" data-id="i-am-groot-s1" data-mins="25"><button class="checkbox"></button><div class="item-main"><span class="item-title">I Am Groot (Сезон 1)</span><span class="item-ru">Я есть Грут</span><span class="badge anim">Анимация</span><span class="item-meta">после Vol. 2</span></div><span class="item-runtime">25 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=I+Am+Groot">IMDb</a></li>
+      <li class="item" data-id="i-am-groot-s2" data-mins="25"><button class="checkbox"></button><div class="item-main"><span class="item-title">I Am Groot (Сезон 2)</span><span class="item-ru">Я есть Грут</span><span class="badge anim">Анимация</span><span class="item-meta">после Vol. 2</span></div><span class="item-runtime">25 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=I+Am+Groot">IMDb</a></li>
+      <li class="item" data-id="werewolf" data-mins="52"><button class="checkbox"></button><div class="item-main"><span class="item-title">Werewolf by Night</span><span class="item-ru">Оборотень ночью</span><span class="badge special">Спецвыпуск</span><span class="item-meta">2025</span></div><span class="item-runtime">52 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Werewolf+by+Night+Marvel">IMDb</a></li>
+      <li class="item" data-id="gotg-holiday" data-mins="42"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Guardians of the Galaxy Holiday Special</span><span class="item-ru">Стражи Галактики: Праздничный спецвыпуск</span><span class="badge special">Спецвыпуск</span><span class="item-meta">Декабрь 2025</span></div><span class="item-runtime">42 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Guardians+of+the+Galaxy+Holiday+Special">IMDb</a></li>
+      <li class="item" data-id="wakanda-forever" data-mins="161"><button class="checkbox"></button><div class="item-main"><span class="item-title">Black Panther: Wakanda Forever</span><span class="item-ru">Чёрная Пантера: Ваканда навеки</span><span class="badge movie">Фильм</span><span class="item-meta">2025</span></div><span class="item-runtime">2 ч 41 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Black+Panther+Wakanda+Forever">IMDb</a></li>
+      <li class="item" data-id="secret-invasion" data-mins="272"><button class="checkbox"></button><div class="item-main"><span class="item-title">Secret Invasion</span><span class="item-ru">Тайное вторжение</span><span class="badge tv">Сериал</span><span class="item-meta">2025</span></div><span class="item-runtime">4 ч 32 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Secret+Invasion+Marvel">IMDb</a></li>
+      <li class="item" data-id="quantumania" data-mins="124"><button class="checkbox"></button><div class="item-main"><span class="item-title">Ant-Man and the Wasp: Quantumania</span><span class="item-ru">Человек-муравей и Оса: Квантомания</span><span class="badge movie">Фильм</span><span class="item-meta">2025</span></div><span class="item-runtime">2 ч 04 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Ant-Man+Quantumania">IMDb</a></li>
+      <li class="item" data-id="gotg-3" data-mins="150"><button class="checkbox"></button><div class="item-main"><span class="item-title">Guardians of the Galaxy Vol. 3</span><span class="item-ru">Стражи Галактики. Часть 3</span><span class="badge movie">Фильм</span><span class="item-meta">2025</span></div><span class="item-runtime">2 ч 30 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Guardians+of+the+Galaxy+Vol+3">IMDb</a></li>
+      <li class="item" data-id="loki-s2" data-mins="313"><button class="checkbox"></button><div class="item-main"><span class="item-title">Loki (Сезон 2)</span><span class="item-ru">Локи</span><span class="badge tv">Сериал</span><span class="item-meta">Вне времени</span></div><span class="item-runtime">5 ч 13 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Loki+series">IMDb</a></li>
+      <li class="item" data-id="echo" data-mins="215"><button class="checkbox"></button><div class="item-main"><span class="item-title">Echo</span><span class="item-ru">Эхо</span><span class="badge tv">Сериал</span><span class="item-meta">после Hawkeye</span></div><span class="item-runtime">3 ч 35 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Echo+Marvel">IMDb</a></li>
+      <li class="item" data-id="agatha" data-mins="379"><button class="checkbox"></button><div class="item-main"><span class="item-title">Agatha All Along</span><span class="item-ru">Агата с самого начала</span><span class="badge tv">Сериал</span><span class="item-meta">после WandaVision</span></div><span class="item-runtime">6 ч 19 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Agatha+All+Along">IMDb</a></li>
+      <li class="item" data-id="marvels" data-mins="105"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Marvels</span><span class="item-ru">Марвелы</span><span class="badge movie">Фильм</span><span class="item-meta">2026</span></div><span class="item-runtime">1 ч 45 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=The+Marvels+2023">IMDb</a></li>
+      <li class="item" data-id="daredevil-ba-s1" data-mins="495"><button class="checkbox"></button><div class="item-main"><span class="item-title">Daredevil: Born Again (Сезон 1)</span><span class="item-ru">Сорвиголова: Рождённый заново</span><span class="badge tv">Сериал</span><span class="item-meta">2026</span></div><span class="item-runtime">8 ч 15 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Daredevil+Born+Again">IMDb</a></li>
+      <li class="item" data-id="daredevil-ba-s2" data-mins="360"><button class="checkbox"></button><div class="item-main"><span class="item-title">Daredevil: Born Again (Сезон 2)</span><span class="item-ru">Сорвиголова: Рождённый заново</span><span class="badge tv">Сериал</span><span class="item-meta">2026</span></div><span class="item-runtime">6 ч 00 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Daredevil+Born+Again">IMDb</a></li>
+      <li class="item" data-id="ironheart" data-mins="360"><button class="checkbox"></button><div class="item-main"><span class="item-title">Ironheart</span><span class="item-ru">Железное сердце</span><span class="badge tv">Сериал</span><span class="item-meta">после Wakanda Forever</span></div><span class="item-runtime">6 ч 00 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Ironheart+Marvel">IMDb</a></li>
+      <li class="item" data-id="friendly-spider" data-mins="252"><button class="checkbox"></button><div class="item-main"><span class="item-title">Your Friendly Neighborhood Spider-Man</span><span class="item-ru">Дружелюбный сосед Человек-паук</span><span class="badge anim">Анимация</span><span class="item-meta">альт. реальность</span></div><span class="item-runtime">4 ч 12 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Your+Friendly+Neighborhood+Spider-Man">IMDb</a></li>
+      <li class="item" data-id="brave-new-world" data-mins="118"><button class="checkbox"></button><div class="item-main"><span class="item-title">Captain America: Brave New World</span><span class="item-ru">Капитан Америка: Дивный новый мир</span><span class="badge movie">Фильм</span><span class="item-meta">2027</span></div><span class="item-runtime">1 ч 58 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Captain+America+Brave+New+World">IMDb</a></li>
+      <li class="item" data-id="thunderbolts" data-mins="126"><button class="checkbox"></button><div class="item-main"><span class="item-title">Thunderbolts*</span><span class="item-ru">Громовержцы*</span><span class="badge movie">Фильм</span><span class="item-meta">2027</span></div><span class="item-runtime">2 ч 06 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Thunderbolts+Marvel">IMDb</a></li>
+      <li class="item" data-id="wonder-man" data-mins="360"><button class="checkbox"></button><div class="item-main"><span class="item-title">Wonder Man</span><span class="item-ru">Чудо-человек</span><span class="badge tv">Сериал</span><span class="item-meta">современность</span></div><span class="item-runtime">6 ч 00 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Wonder+Man+Marvel">IMDb</a></li>
+
+    <div class="phase"><span>Альт. реальности / мультивселенная</span></div>
+      <li class="item" data-id="xmen-97-s1" data-mins="344"><button class="checkbox"></button><div class="item-main"><span class="item-title">X-Men '97</span><span class="item-ru">Люди Икс '97</span><span class="badge anim">Анимация</span><span class="item-meta">Земля-X</span></div><span class="item-runtime">5 ч 44 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=X-Men+97">IMDb</a></li>
+      <li class="item" data-id="deadpool-wolverine" data-mins="128"><button class="checkbox"></button><div class="item-main"><span class="item-title">Deadpool & Wolverine</span><span class="item-ru">Дэдпул и Росомаха</span><span class="badge movie">Фильм</span><span class="item-meta">мультивселенная</span></div><span class="item-runtime">2 ч 08 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Deadpool+and+Wolverine">IMDb</a></li>
+      <li class="item" data-id="ff-first-steps" data-mins="115"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Fantastic Four: First Steps</span><span class="item-ru">Фантастическая четвёрка: Первые шаги</span><span class="badge movie">Фильм</span><span class="item-meta">Земля-828, 1960-е</span></div><span class="item-runtime">1 ч 55 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Fantastic+Four+First+Steps">IMDb</a></li>
+      <li class="item" data-id="marvel-zombies" data-mins="180"><button class="checkbox"></button><div class="item-main"><span class="item-title">Marvel Zombies</span><span class="item-ru">Зомби Marvel</span><span class="badge anim">Анимация</span><span class="item-meta">альт. реальность</span></div><span class="item-runtime">3 ч 00 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Marvel+Zombies">IMDb</a></li>
+
+    <div class="phase"><span>Грядущие события</span></div>
+      <li class="item" data-id="brand-new-day" data-mins="0" data-unreleased="1"><button class="checkbox"></button><div class="item-main"><span class="item-title">Spider-Man: Brand New Day</span><span class="item-ru">Человек-паук: Новый день</span><span class="badge movie">Фильм</span><span class="item-meta">2026 (ожидается)</span></div><span class="item-runtime">—</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Spider-Man+Brand+New+Day">IMDb</a></li>
+      <li class="item" data-id="doomsday" data-mins="0" data-unreleased="1"><button class="checkbox"></button><div class="item-main"><span class="item-title">Avengers: Doomsday</span><span class="item-ru">Мстители: Судный день</span><span class="badge movie">Фильм</span><span class="item-meta">2026 (ожидается)</span></div><span class="item-runtime">—</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Avengers+Doomsday">IMDb</a></li>
+      <li class="item" data-id="secret-wars" data-mins="0" data-unreleased="1"><button class="checkbox"></button><div class="item-main"><span class="item-title">Avengers: Secret Wars</span><span class="item-ru">Мстители: Секретные войны</span><span class="badge movie">Фильм</span><span class="item-meta">2027 (ожидается)</span></div><span class="item-runtime">—</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Avengers+Secret+Wars">IMDb</a></li>
+    </ul>
+  </div>
+  </div>
+
+  <div id="retro-view" class="hidden">
+    <div class="total-banner">
+      <span class="total-banner-label">Общая длительность ретро-анимации:</span>
+      <span class="total-banner-value" id="retro-total"></span>
+    </div>
+    <p class="count"><span id="retro-count"></span></p>
+
+    <div class="retro-note">
+      📺 Классическая анимация Marvel, не входящая в официальный канон MCU. Большая часть — это «Marvel Animated Universe» 90-х, который происходит в общей вселенной Earth-92131 и стал предтечей современных супергеройских мультсериалов. X-Men '97 — прямой сиквел того самого «Людей Икс» 90-х.
+    </div>
+
+    <div class="phase"><span>Marvel Animated Universe (90-е, Earth-92131)</span></div>
+    <ul class="list" data-group="mau-90s">
+      <li class="item" data-id="retro-xmen-tas" data-mins="1672"><button class="checkbox"></button><div class="item-main"><span class="item-title">X-Men: The Animated Series</span><span class="item-ru">Люди Икс</span><span class="badge anim">Анимация</span><span class="item-meta">1992–1997</span></div><span class="item-runtime">~27 ч 50 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=X-Men+Animated+Series+1992">IMDb</a></li>
+      <li class="item" data-id="retro-ironman-94" data-mins="572"><button class="checkbox"></button><div class="item-main"><span class="item-title">Iron Man</span><span class="item-ru">Железный человек</span><span class="badge anim">Анимация</span><span class="item-meta">1994–1996</span></div><span class="item-runtime">~9 ч 30 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Iron+Man+1994+animated">IMDb</a></li>
+      <li class="item" data-id="retro-ff-94" data-mins="572"><button class="checkbox"></button><div class="item-main"><span class="item-title">Fantastic Four</span><span class="item-ru">Фантастическая четвёрка</span><span class="badge anim">Анимация</span><span class="item-meta">1994–1996</span></div><span class="item-runtime">~9 ч 30 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Fantastic+Four+1994+animated">IMDb</a></li>
+      <li class="item" data-id="retro-spider-tas" data-mins="1485"><button class="checkbox"></button><div class="item-main"><span class="item-title">Spider-Man: The Animated Series</span><span class="item-ru">Человек-паук</span><span class="badge anim">Анимация</span><span class="item-meta">1994–1998</span></div><span class="item-runtime">~24 ч 45 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Spider-Man+Animated+1994">IMDb</a></li>
+      <li class="item" data-id="retro-hulk-96" data-mins="462"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Incredible Hulk</span><span class="item-ru">Невероятный Халк</span><span class="badge anim">Анимация</span><span class="item-meta">1996–1997</span></div><span class="item-runtime">~7 ч 40 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Incredible+Hulk+1996+animated">IMDb</a></li>
+      <li class="item" data-id="retro-silver-surfer" data-mins="286"><button class="checkbox"></button><div class="item-main"><span class="item-title">Silver Surfer</span><span class="item-ru">Серебряный сёрфер</span><span class="badge anim">Анимация</span><span class="item-meta">1998</span></div><span class="item-runtime">~4 ч 45 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Silver+Surfer+1998+animated">IMDb</a></li>
+      <li class="item" data-id="retro-spider-unlimited" data-mins="286"><button class="checkbox"></button><div class="item-main"><span class="item-title">Spider-Man Unlimited</span><span class="item-ru">Непредельный Человек-паук</span><span class="badge anim">Анимация</span><span class="item-meta">1999–2001</span></div><span class="item-runtime">~4 ч 45 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Spider-Man+Unlimited+1999">IMDb</a></li>
+      <li class="item" data-id="retro-avengers-99" data-mins="286"><button class="checkbox"></button><div class="item-main"><span class="item-title">Avengers: United They Stand</span><span class="item-ru">Мстители: Сплочённые</span><span class="badge anim">Анимация</span><span class="item-meta">1999–2000</span></div><span class="item-runtime">~4 ч 45 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Avengers+United+They+Stand">IMDb</a></li>
+    </ul>
+
+    <div class="phase"><span>Другие классические мультсериалы</span></div>
+    <ul class="list" data-group="classic-other">
+      <li class="item" data-id="retro-spider-amazing" data-mins="528"><button class="checkbox"></button><div class="item-main"><span class="item-title">Spider-Man and His Amazing Friends</span><span class="item-ru">Человек-паук и его удивительные друзья</span><span class="badge anim">Анимация</span><span class="item-meta">1981–1983</span></div><span class="item-runtime">~8 ч 50 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Spider-Man+Amazing+Friends">IMDb</a></li>
+      <li class="item" data-id="retro-xmen-evolution" data-mins="1144"><button class="checkbox"></button><div class="item-main"><span class="item-title">X-Men: Evolution</span><span class="item-ru">Люди Икс: Эволюция</span><span class="badge anim">Анимация</span><span class="item-meta">2000–2003</span></div><span class="item-runtime">~19 ч 05 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=X-Men+Evolution">IMDb</a></li>
+      <li class="item" data-id="retro-spectacular" data-mins="572"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Spectacular Spider-Man</span><span class="item-ru">Грандиозный Человек-паук</span><span class="badge anim">Анимация</span><span class="item-meta">2008–2009</span></div><span class="item-runtime">~9 ч 30 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Spectacular+Spider-Man">IMDb</a></li>
+      <li class="item" data-id="retro-wolverine-xmen" data-mins="572"><button class="checkbox"></button><div class="item-main"><span class="item-title">Wolverine and the X-Men</span><span class="item-ru">Росомаха и Люди Икс</span><span class="badge anim">Анимация</span><span class="item-meta">2009</span></div><span class="item-runtime">~9 ч 30 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Wolverine+and+the+X-Men">IMDb</a></li>
+      <li class="item" data-id="retro-avengers-emh" data-mins="572"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Avengers: Earth's Mightiest Heroes</span><span class="item-ru">Мстители: Могучие герои Земли</span><span class="badge anim">Анимация</span><span class="item-meta">2010–2012</span></div><span class="item-runtime">~9 ч 30 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Avengers+Earths+Mightiest+Heroes">IMDb</a></li>
+      <li class="item" data-id="retro-ultimate-spider" data-mins="2068"><button class="checkbox"></button><div class="item-main"><span class="item-title">Ultimate Spider-Man</span><span class="item-ru">Совершенный Человек-паук</span><span class="badge anim">Анимация</span><span class="item-meta">2012–2017</span></div><span class="item-runtime">~34 ч 25 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Ultimate+Spider-Man+animated">IMDb</a></li>
+      <li class="item" data-id="retro-avengers-assemble" data-mins="2772"><button class="checkbox"></button><div class="item-main"><span class="item-title">Avengers Assemble</span><span class="item-ru">Мстители, общий сбор!</span><span class="badge anim">Анимация</span><span class="item-meta">2013–2019</span></div><span class="item-runtime">~46 ч 10 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Avengers+Assemble+animated">IMDb</a></li>
+      <li class="item" data-id="retro-hulk-agents" data-mins="572"><button class="checkbox"></button><div class="item-main"><span class="item-title">Hulk and the Agents of S.M.A.S.H.</span><span class="item-ru">Халк и агенты СМЭШ</span><span class="badge anim">Анимация</span><span class="item-meta">2013–2015</span></div><span class="item-runtime">~9 ч 30 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Hulk+Agents+SMASH">IMDb</a></li>
+      <li class="item" data-id="retro-guardians-cartoon" data-mins="1188"><button class="checkbox"></button><div class="item-main"><span class="item-title">Guardians of the Galaxy</span><span class="item-ru">Стражи Галактики</span><span class="badge anim">Анимация</span><span class="item-meta">2015–2019</span></div><span class="item-runtime">~19 ч 50 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Guardians+Galaxy+animated+series">IMDb</a></li>
+    </ul>
+  </div>
+
+  <div id="noncanon-view" class="hidden">
+    <div class="total-banner">
+      <span class="total-banner-label">Общая длительность вне канона MCU:</span>
+      <span class="total-banner-value" id="noncanon-total"></span>
+    </div>
+    <p class="count"><span id="noncanon-count"></span></p>
+
+    <div class="retro-note">
+      🎭 Фильмы и сериалы про героев Marvel, которые НЕ входят в основной канон MCU: Sony-вселенная Человека-паука, Fox-овская X-Men франшиза до сделки с Disney, Netflix-сериалы (хотя их в 2024 году условно «канонизировали»), классические экранизации до 2008 года и другие проекты Marvel TV.
+    </div>
+
+    <div class="phase"><span>Spider-Man (Sony, до MCU)</span></div>
+    <ul class="list" data-group="spider-sony">
+      <li class="item" data-id="nonmcu-spider-2002" data-mins="121"><button class="checkbox"></button><div class="item-main"><span class="item-title">Spider-Man</span><span class="item-ru">Человек-паук</span><span class="badge movie">Фильм</span><span class="item-meta">2002</span></div><span class="item-runtime">2 ч 01 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Spider-Man+2002+Raimi">IMDb</a></li>
+      <li class="item" data-id="nonmcu-spider-2-2004" data-mins="127"><button class="checkbox"></button><div class="item-main"><span class="item-title">Spider-Man 2</span><span class="item-ru">Человек-паук 2</span><span class="badge movie">Фильм</span><span class="item-meta">2004</span></div><span class="item-runtime">2 ч 07 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Spider-Man+2+2004">IMDb</a></li>
+      <li class="item" data-id="nonmcu-spider-3-2007" data-mins="139"><button class="checkbox"></button><div class="item-main"><span class="item-title">Spider-Man 3</span><span class="item-ru">Человек-паук 3: Враг в отражении</span><span class="badge movie">Фильм</span><span class="item-meta">2007</span></div><span class="item-runtime">2 ч 19 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Spider-Man+3+2007">IMDb</a></li>
+      <li class="item" data-id="nonmcu-amazing-spider-2012" data-mins="136"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Amazing Spider-Man</span><span class="item-ru">Новый Человек-паук</span><span class="badge movie">Фильм</span><span class="item-meta">2012</span></div><span class="item-runtime">2 ч 16 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Amazing+Spider-Man+2012">IMDb</a></li>
+      <li class="item" data-id="nonmcu-amazing-spider-2-2014" data-mins="142"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Amazing Spider-Man 2</span><span class="item-ru">Новый Человек-паук: Высокое напряжение</span><span class="badge movie">Фильм</span><span class="item-meta">2014</span></div><span class="item-runtime">2 ч 22 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Amazing+Spider-Man+2+2014">IMDb</a></li>
+      <li class="item" data-id="nonmcu-spiderverse-2018" data-mins="117"><button class="checkbox"></button><div class="item-main"><span class="item-title">Spider-Man: Into the Spider-Verse</span><span class="item-ru">Человек-паук: Через вселенные</span><span class="badge anim">Анимация</span><span class="item-meta">2018</span></div><span class="item-runtime">1 ч 57 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Into+the+Spider-Verse">IMDb</a></li>
+      <li class="item" data-id="nonmcu-spiderverse-2023" data-mins="140"><button class="checkbox"></button><div class="item-main"><span class="item-title">Spider-Man: Across the Spider-Verse</span><span class="item-ru">Человек-паук: Паутина вселенных</span><span class="badge anim">Анимация</span><span class="item-meta">2023</span></div><span class="item-runtime">2 ч 20 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Across+the+Spider-Verse">IMDb</a></li>
+      <li class="item" data-id="nonmcu-spider-noir" data-mins="360"><button class="checkbox"></button><div class="item-main"><span class="item-title">Spider-Noir</span><span class="item-ru">Человек-паук Нуар</span><span class="badge tv">Сериал</span><span class="item-meta">2026 (Prime Video)</span></div><span class="item-runtime">~6 ч 00 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Spider-Noir+Nicolas+Cage">IMDb</a></li>
+      <li class="item" data-id="nonmcu-spiderverse-beyond" data-mins="0" data-unreleased="1"><button class="checkbox"></button><div class="item-main"><span class="item-title">Spider-Man: Beyond the Spider-Verse</span><span class="item-ru">Человек-паук: За пределами вселенных</span><span class="badge anim">Анимация</span><span class="item-meta">ожидается</span></div><span class="item-runtime">—</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Beyond+the+Spider-Verse">IMDb</a></li>
+    </ul>
+
+    <div class="phase"><span>Sony's Spider-Man Universe (SSU)</span></div>
+    <ul class="list" data-group="ssu">
+      <li class="item" data-id="nonmcu-venom-1" data-mins="112"><button class="checkbox"></button><div class="item-main"><span class="item-title">Venom</span><span class="item-ru">Веном</span><span class="badge movie">Фильм</span><span class="item-meta">2018</span></div><span class="item-runtime">1 ч 52 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Venom+2018">IMDb</a></li>
+      <li class="item" data-id="nonmcu-venom-2" data-mins="97"><button class="checkbox"></button><div class="item-main"><span class="item-title">Venom: Let There Be Carnage</span><span class="item-ru">Веном 2</span><span class="badge movie">Фильм</span><span class="item-meta">2021</span></div><span class="item-runtime">1 ч 37 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Venom+Let+There+Be+Carnage">IMDb</a></li>
+      <li class="item" data-id="nonmcu-morbius" data-mins="104"><button class="checkbox"></button><div class="item-main"><span class="item-title">Morbius</span><span class="item-ru">Морбиус</span><span class="badge movie">Фильм</span><span class="item-meta">2022</span></div><span class="item-runtime">1 ч 44 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Morbius+2022">IMDb</a></li>
+      <li class="item" data-id="nonmcu-madame-web" data-mins="116"><button class="checkbox"></button><div class="item-main"><span class="item-title">Madame Web</span><span class="item-ru">Мадам Паутина</span><span class="badge movie">Фильм</span><span class="item-meta">2024</span></div><span class="item-runtime">1 ч 56 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Madame+Web+2024">IMDb</a></li>
+      <li class="item" data-id="nonmcu-venom-3" data-mins="109"><button class="checkbox"></button><div class="item-main"><span class="item-title">Venom: The Last Dance</span><span class="item-ru">Веном: Последний танец</span><span class="badge movie">Фильм</span><span class="item-meta">2024</span></div><span class="item-runtime">1 ч 49 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Venom+Last+Dance">IMDb</a></li>
+      <li class="item" data-id="nonmcu-kraven" data-mins="127"><button class="checkbox"></button><div class="item-main"><span class="item-title">Kraven the Hunter</span><span class="item-ru">Крэйвен-охотник</span><span class="badge movie">Фильм</span><span class="item-meta">2024</span></div><span class="item-runtime">2 ч 07 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Kraven+the+Hunter">IMDb</a></li>
+    </ul>
+
+    <div class="phase"><span>X-Men (Fox)</span></div>
+    <ul class="list" data-group="xmen-fox">
+      <li class="item" data-id="nonmcu-xmen-2000" data-mins="104"><button class="checkbox"></button><div class="item-main"><span class="item-title">X-Men</span><span class="item-ru">Люди Икс</span><span class="badge movie">Фильм</span><span class="item-meta">2000</span></div><span class="item-runtime">1 ч 44 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=X-Men+2000">IMDb</a></li>
+      <li class="item" data-id="nonmcu-x2" data-mins="134"><button class="checkbox"></button><div class="item-main"><span class="item-title">X2: X-Men United</span><span class="item-ru">Люди Икс 2</span><span class="badge movie">Фильм</span><span class="item-meta">2003</span></div><span class="item-runtime">2 ч 14 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=X2+X-Men+United">IMDb</a></li>
+      <li class="item" data-id="nonmcu-xmen-3" data-mins="104"><button class="checkbox"></button><div class="item-main"><span class="item-title">X-Men: The Last Stand</span><span class="item-ru">Люди Икс: Последняя битва</span><span class="badge movie">Фильм</span><span class="item-meta">2006</span></div><span class="item-runtime">1 ч 44 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=X-Men+Last+Stand">IMDb</a></li>
+      <li class="item" data-id="nonmcu-wolverine-origins" data-mins="107"><button class="checkbox"></button><div class="item-main"><span class="item-title">X-Men Origins: Wolverine</span><span class="item-ru">Люди Икс: Начало. Росомаха</span><span class="badge movie">Фильм</span><span class="item-meta">2009</span></div><span class="item-runtime">1 ч 47 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=X-Men+Origins+Wolverine">IMDb</a></li>
+      <li class="item" data-id="nonmcu-first-class" data-mins="132"><button class="checkbox"></button><div class="item-main"><span class="item-title">X-Men: First Class</span><span class="item-ru">Люди Икс: Первый класс</span><span class="badge movie">Фильм</span><span class="item-meta">2011</span></div><span class="item-runtime">2 ч 12 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=X-Men+First+Class">IMDb</a></li>
+      <li class="item" data-id="nonmcu-the-wolverine" data-mins="126"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Wolverine</span><span class="item-ru">Росомаха: Бессмертный</span><span class="badge movie">Фильм</span><span class="item-meta">2013</span></div><span class="item-runtime">2 ч 06 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=The+Wolverine+2013">IMDb</a></li>
+      <li class="item" data-id="nonmcu-dofp" data-mins="132"><button class="checkbox"></button><div class="item-main"><span class="item-title">X-Men: Days of Future Past</span><span class="item-ru">Люди Икс: Дни минувшего будущего</span><span class="badge movie">Фильм</span><span class="item-meta">2014</span></div><span class="item-runtime">2 ч 12 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=X-Men+Days+of+Future+Past">IMDb</a></li>
+      <li class="item" data-id="nonmcu-deadpool-1" data-mins="108"><button class="checkbox"></button><div class="item-main"><span class="item-title">Deadpool</span><span class="item-ru">Дэдпул</span><span class="badge movie">Фильм</span><span class="item-meta">2016</span></div><span class="item-runtime">1 ч 48 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Deadpool+2016">IMDb</a></li>
+      <li class="item" data-id="nonmcu-apocalypse" data-mins="144"><button class="checkbox"></button><div class="item-main"><span class="item-title">X-Men: Apocalypse</span><span class="item-ru">Люди Икс: Апокалипсис</span><span class="badge movie">Фильм</span><span class="item-meta">2016</span></div><span class="item-runtime">2 ч 24 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=X-Men+Apocalypse">IMDb</a></li>
+      <li class="item" data-id="nonmcu-logan" data-mins="137"><button class="checkbox"></button><div class="item-main"><span class="item-title">Logan</span><span class="item-ru">Логан</span><span class="badge movie">Фильм</span><span class="item-meta">2017</span></div><span class="item-runtime">2 ч 17 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Logan+2017">IMDb</a></li>
+      <li class="item" data-id="nonmcu-deadpool-2" data-mins="119"><button class="checkbox"></button><div class="item-main"><span class="item-title">Deadpool 2</span><span class="item-ru">Дэдпул 2</span><span class="badge movie">Фильм</span><span class="item-meta">2018</span></div><span class="item-runtime">1 ч 59 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Deadpool+2">IMDb</a></li>
+      <li class="item" data-id="nonmcu-dark-phoenix" data-mins="113"><button class="checkbox"></button><div class="item-main"><span class="item-title">Dark Phoenix</span><span class="item-ru">Люди Икс: Тёмный Феникс</span><span class="badge movie">Фильм</span><span class="item-meta">2019</span></div><span class="item-runtime">1 ч 53 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Dark+Phoenix+2019">IMDb</a></li>
+      <li class="item" data-id="nonmcu-new-mutants" data-mins="94"><button class="checkbox"></button><div class="item-main"><span class="item-title">The New Mutants</span><span class="item-ru">Новые мутанты</span><span class="badge movie">Фильм</span><span class="item-meta">2020</span></div><span class="item-runtime">1 ч 34 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=New+Mutants+2020">IMDb</a></li>
+    </ul>
+
+    <div class="phase"><span>Fantastic Four (Fox)</span></div>
+    <ul class="list" data-group="ff-fox">
+      <li class="item" data-id="nonmcu-ff-2005" data-mins="106"><button class="checkbox"></button><div class="item-main"><span class="item-title">Fantastic Four</span><span class="item-ru">Фантастическая четвёрка</span><span class="badge movie">Фильм</span><span class="item-meta">2005</span></div><span class="item-runtime">1 ч 46 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Fantastic+Four+2005">IMDb</a></li>
+      <li class="item" data-id="nonmcu-ff-2007" data-mins="92"><button class="checkbox"></button><div class="item-main"><span class="item-title">Fantastic Four: Rise of the Silver Surfer</span><span class="item-ru">Фантастическая четвёрка: Вторжение Серебряного сёрфера</span><span class="badge movie">Фильм</span><span class="item-meta">2007</span></div><span class="item-runtime">1 ч 32 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Fantastic+Four+Silver+Surfer">IMDb</a></li>
+      <li class="item" data-id="nonmcu-ff-2015" data-mins="100"><button class="checkbox"></button><div class="item-main"><span class="item-title">Fantastic Four</span><span class="item-ru">Фантастическая четвёрка</span><span class="badge movie">Фильм</span><span class="item-meta">2015</span></div><span class="item-runtime">1 ч 40 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Fantastic+Four+2015">IMDb</a></li>
+    </ul>
+
+    <div class="phase"><span>Marvel Netflix — The Defenders Saga</span></div>
+    <div class="retro-note">
+      🦸 Эти сериалы — единая взаимосвязанная вселенная, рекомендуется смотреть по сезонам в порядке выхода (перемежая шоу), а не каждый сериал целиком. В 2024 году Marvel Studios официально признала их каноном MCU.
+    </div>
+    <ul class="list" data-group="netflix">
+      <li class="item" data-id="nonmcu-dd-s1" data-mins="767"><button class="checkbox"></button><div class="item-main"><span class="item-title">Daredevil (Сезон 1)</span><span class="item-ru">Сорвиголова</span><span class="badge tv">Сериал</span><span class="item-meta">апр 2015</span></div><span class="item-runtime">~12 ч 47 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Daredevil+Netflix+season+1">IMDb</a></li>
+      <li class="item" data-id="nonmcu-jj-s1" data-mins="717"><button class="checkbox"></button><div class="item-main"><span class="item-title">Jessica Jones (Сезон 1)</span><span class="item-ru">Джессика Джонс</span><span class="badge tv">Сериал</span><span class="item-meta">ноя 2015</span></div><span class="item-runtime">~11 ч 57 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Jessica+Jones+season+1">IMDb</a></li>
+      <li class="item" data-id="nonmcu-dd-s2" data-mins="780"><button class="checkbox"></button><div class="item-main"><span class="item-title">Daredevil (Сезон 2)</span><span class="item-ru">Сорвиголова</span><span class="badge tv">Сериал</span><span class="item-meta">мар 2016</span></div><span class="item-runtime">~13 ч 00 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Daredevil+Netflix+season+2">IMDb</a></li>
+      <li class="item" data-id="nonmcu-luke-s1" data-mins="780"><button class="checkbox"></button><div class="item-main"><span class="item-title">Luke Cage (Сезон 1)</span><span class="item-ru">Люк Кейдж</span><span class="badge tv">Сериал</span><span class="item-meta">сен 2016</span></div><span class="item-runtime">~13 ч 00 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Luke+Cage+season+1">IMDb</a></li>
+      <li class="item" data-id="nonmcu-iron-s1" data-mins="690"><button class="checkbox"></button><div class="item-main"><span class="item-title">Iron Fist (Сезон 1)</span><span class="item-ru">Железный кулак</span><span class="badge tv">Сериал</span><span class="item-meta">мар 2017</span></div><span class="item-runtime">~11 ч 30 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Iron+Fist+season+1">IMDb</a></li>
+      <li class="item" data-id="nonmcu-defenders" data-mins="398"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Defenders</span><span class="item-ru">Защитники (кроссовер)</span><span class="badge tv">Сериал</span><span class="item-meta">авг 2017</span></div><span class="item-runtime">6 ч 38 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Defenders+Marvel+Netflix">IMDb</a></li>
+      <li class="item" data-id="nonmcu-pun-s1" data-mins="780"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Punisher (Сезон 1)</span><span class="item-ru">Каратель</span><span class="badge tv">Сериал</span><span class="item-meta">ноя 2017</span></div><span class="item-runtime">~13 ч 00 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Punisher+Netflix+season+1">IMDb</a></li>
+      <li class="item" data-id="nonmcu-jj-s2" data-mins="676"><button class="checkbox"></button><div class="item-main"><span class="item-title">Jessica Jones (Сезон 2)</span><span class="item-ru">Джессика Джонс</span><span class="badge tv">Сериал</span><span class="item-meta">мар 2018</span></div><span class="item-runtime">~11 ч 16 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Jessica+Jones+season+2">IMDb</a></li>
+      <li class="item" data-id="nonmcu-luke-s2" data-mins="683"><button class="checkbox"></button><div class="item-main"><span class="item-title">Luke Cage (Сезон 2)</span><span class="item-ru">Люк Кейдж</span><span class="badge tv">Сериал</span><span class="item-meta">июн 2018</span></div><span class="item-runtime">~11 ч 23 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Luke+Cage+season+2">IMDb</a></li>
+      <li class="item" data-id="nonmcu-iron-s2" data-mins="548"><button class="checkbox"></button><div class="item-main"><span class="item-title">Iron Fist (Сезон 2)</span><span class="item-ru">Железный кулак</span><span class="badge tv">Сериал</span><span class="item-meta">сен 2018</span></div><span class="item-runtime">~9 ч 08 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Iron+Fist+season+2">IMDb</a></li>
+      <li class="item" data-id="nonmcu-dd-s3" data-mins="780"><button class="checkbox"></button><div class="item-main"><span class="item-title">Daredevil (Сезон 3)</span><span class="item-ru">Сорвиголова</span><span class="badge tv">Сериал</span><span class="item-meta">окт 2018</span></div><span class="item-runtime">~13 ч 00 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Daredevil+Netflix+season+3">IMDb</a></li>
+      <li class="item" data-id="nonmcu-pun-s2" data-mins="780"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Punisher (Сезон 2)</span><span class="item-ru">Каратель</span><span class="badge tv">Сериал</span><span class="item-meta">янв 2019</span></div><span class="item-runtime">~13 ч 00 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Punisher+Netflix+season+2">IMDb</a></li>
+      <li class="item" data-id="nonmcu-jj-s3" data-mins="665"><button class="checkbox"></button><div class="item-main"><span class="item-title">Jessica Jones (Сезон 3)</span><span class="item-ru">Джессика Джонс</span><span class="badge tv">Сериал</span><span class="item-meta">июн 2019</span></div><span class="item-runtime">~11 ч 05 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Jessica+Jones+season+3">IMDb</a></li>
+    </ul>
+
+    <div class="phase"><span>Marvel Television (ABC / Hulu / Freeform)</span></div>
+    <div class="retro-note">
+      📺 Эти сериалы делало отдельное подразделение Marvel TV (не Marvel Studios), и Кевин Файги к ним не имел отношения. Marvel Studios официально <strong>не признаёт их каноном MCU</strong> — хотя ранние сезоны Agents of S.H.I.E.L.D. напрямую пересекались с фильмами. В Daredevil: Born Again S2 (2026) впервые за 12 лет появилась отсылка к AoS, так что ситуация может ещё измениться.
+    </div>
+    <ul class="list" data-group="marvel-tv">
+      <li class="item" data-id="nonmcu-aos-s1" data-mins="990"><button class="checkbox"></button><div class="item-main"><span class="item-title">Agents of S.H.I.E.L.D. (Сезон 1)</span><span class="item-ru">Агенты Щ.И.Т. — параллельно Winter Soldier</span><span class="badge tv">Сериал</span><span class="item-meta">2013–2014</span></div><span class="item-runtime">~16 ч 30 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Agents+of+SHIELD+season+1">IMDb</a></li>
+      <li class="item" data-id="nonmcu-aos-s2" data-mins="990"><button class="checkbox"></button><div class="item-main"><span class="item-title">Agents of S.H.I.E.L.D. (Сезон 2)</span><span class="item-ru">Агенты Щ.И.Т. — параллельно Age of Ultron</span><span class="badge tv">Сериал</span><span class="item-meta">2014–2015</span></div><span class="item-runtime">~16 ч 30 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Agents+of+SHIELD+season+2">IMDb</a></li>
+      <li class="item" data-id="nonmcu-aos-s3" data-mins="990"><button class="checkbox"></button><div class="item-main"><span class="item-title">Agents of S.H.I.E.L.D. (Сезон 3)</span><span class="item-ru">Агенты Щ.И.Т. — Inhumans-сюжет</span><span class="badge tv">Сериал</span><span class="item-meta">2015–2016</span></div><span class="item-runtime">~16 ч 30 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Agents+of+SHIELD+season+3">IMDb</a></li>
+      <li class="item" data-id="nonmcu-aos-s4" data-mins="990"><button class="checkbox"></button><div class="item-main"><span class="item-title">Agents of S.H.I.E.L.D. (Сезон 4)</span><span class="item-ru">Агенты Щ.И.Т. — Ghost Rider, LMD, Framework</span><span class="badge tv">Сериал</span><span class="item-meta">2016–2017</span></div><span class="item-runtime">~16 ч 30 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Agents+of+SHIELD+season+4">IMDb</a></li>
+      <li class="item" data-id="nonmcu-aos-s5" data-mins="990"><button class="checkbox"></button><div class="item-main"><span class="item-title">Agents of S.H.I.E.L.D. (Сезон 5)</span><span class="item-ru">Агенты Щ.И.Т. — космос и будущее</span><span class="badge tv">Сериал</span><span class="item-meta">2017–2018</span></div><span class="item-runtime">~16 ч 30 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Agents+of+SHIELD+season+5">IMDb</a></li>
+      <li class="item" data-id="nonmcu-aos-s6" data-mins="585"><button class="checkbox"></button><div class="item-main"><span class="item-title">Agents of S.H.I.E.L.D. (Сезон 6)</span><span class="item-ru">Агенты Щ.И.Т.</span><span class="badge tv">Сериал</span><span class="item-meta">2019</span></div><span class="item-runtime">~9 ч 45 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Agents+of+SHIELD+season+6">IMDb</a></li>
+      <li class="item" data-id="nonmcu-aos-s7" data-mins="585"><button class="checkbox"></button><div class="item-main"><span class="item-title">Agents of S.H.I.E.L.D. (Сезон 7)</span><span class="item-ru">Агенты Щ.И.Т. — путешествия во времени, финал</span><span class="badge tv">Сериал</span><span class="item-meta">2020</span></div><span class="item-runtime">~9 ч 45 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Agents+of+SHIELD+season+7">IMDb</a></li>
+      <li class="item" data-id="nonmcu-agent-carter" data-mins="757"><button class="checkbox"></button><div class="item-main"><span class="item-title">Agent Carter</span><span class="item-ru">Агент Картер — после First Avenger</span><span class="badge tv">Сериал</span><span class="item-meta">2015–2016 (2 сезона)</span></div><span class="item-runtime">~12 ч 37 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Agent+Carter">IMDb</a></li>
+      <li class="item" data-id="nonmcu-inhumans" data-mins="320"><button class="checkbox"></button><div class="item-main"><span class="item-title">Inhumans</span><span class="item-ru">Сверхлюди</span><span class="badge tv">Сериал</span><span class="item-meta">2017 (1 сезон)</span></div><span class="item-runtime">~5 ч 20 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Inhumans+Marvel">IMDb</a></li>
+      <li class="item" data-id="nonmcu-runaways" data-mins="1798"><button class="checkbox"></button><div class="item-main"><span class="item-title">Runaways</span><span class="item-ru">Беглецы</span><span class="badge tv">Сериал</span><span class="item-meta">2017–2019 (3 сезона)</span></div><span class="item-runtime">~30 ч</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Runaways+Marvel">IMDb</a></li>
+      <li class="item" data-id="nonmcu-cloak-dagger" data-mins="1116"><button class="checkbox"></button><div class="item-main"><span class="item-title">Cloak & Dagger</span><span class="item-ru">Плащ и Кинжал</span><span class="badge tv">Сериал</span><span class="item-meta">2018–2019 (2 сезона)</span></div><span class="item-runtime">~18 ч 36 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Cloak+and+Dagger+Marvel">IMDb</a></li>
+      <li class="item" data-id="nonmcu-helstrom" data-mins="450"><button class="checkbox"></button><div class="item-main"><span class="item-title">Helstrom</span><span class="item-ru">Хелстром</span><span class="badge tv">Сериал</span><span class="item-meta">2020 (1 сезон)</span></div><span class="item-runtime">~7 ч 30 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Helstrom+Marvel">IMDb</a></li>
+      <li class="item" data-id="nonmcu-legion" data-mins="1620"><button class="checkbox"></button><div class="item-main"><span class="item-title">Legion</span><span class="item-ru">Легион</span><span class="badge tv">Сериал</span><span class="item-meta">2017–2019 (3 сезона, FX)</span></div><span class="item-runtime">~27 ч</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Legion+Marvel+FX">IMDb</a></li>
+      <li class="item" data-id="nonmcu-gifted" data-mins="1740"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Gifted</span><span class="item-ru">Одарённые</span><span class="badge tv">Сериал</span><span class="item-meta">2017–2019 (2 сезона, Fox)</span></div><span class="item-runtime">~29 ч</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=The+Gifted+Marvel">IMDb</a></li>
+    </ul>
+
+    <div class="phase"><span>Старая классика (до 2008)</span></div>
+    <ul class="list" data-group="classic-pre2008">
+      <li class="item" data-id="nonmcu-howard-duck" data-mins="110"><button class="checkbox"></button><div class="item-main"><span class="item-title">Howard the Duck</span><span class="item-ru">Говард-утка</span><span class="badge movie">Фильм</span><span class="item-meta">1986</span></div><span class="item-runtime">1 ч 50 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Howard+the+Duck+1986">IMDb</a></li>
+      <li class="item" data-id="nonmcu-punisher-89" data-mins="89"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Punisher</span><span class="item-ru">Каратель</span><span class="badge movie">Фильм</span><span class="item-meta">1989</span></div><span class="item-runtime">1 ч 29 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Punisher+1989">IMDb</a></li>
+      <li class="item" data-id="nonmcu-captain-america-90" data-mins="97"><button class="checkbox"></button><div class="item-main"><span class="item-title">Captain America</span><span class="item-ru">Капитан Америка</span><span class="badge movie">Фильм</span><span class="item-meta">1990</span></div><span class="item-runtime">1 ч 37 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Captain+America+1990">IMDb</a></li>
+      <li class="item" data-id="nonmcu-ff-corman" data-mins="90"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Fantastic Four</span><span class="item-ru">Фантастическая четвёрка</span><span class="badge movie">Фильм</span><span class="item-meta">1994 (неизданный фильм Кормана)</span></div><span class="item-runtime">1 ч 30 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Fantastic+Four+1994+Corman">IMDb</a></li>
+      <li class="item" data-id="nonmcu-generation-x" data-mins="91"><button class="checkbox"></button><div class="item-main"><span class="item-title">Generation X</span><span class="item-ru">Поколение Икс</span><span class="badge movie">Фильм</span><span class="item-meta">1996 (ТВ-фильм)</span></div><span class="item-runtime">1 ч 31 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Generation+X+1996+Marvel">IMDb</a></li>
+      <li class="item" data-id="nonmcu-blade-1" data-mins="120"><button class="checkbox"></button><div class="item-main"><span class="item-title">Blade</span><span class="item-ru">Блэйд</span><span class="badge movie">Фильм</span><span class="item-meta">1998</span></div><span class="item-runtime">2 ч 00 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Blade+1998">IMDb</a></li>
+      <li class="item" data-id="nonmcu-blade-2" data-mins="117"><button class="checkbox"></button><div class="item-main"><span class="item-title">Blade II</span><span class="item-ru">Блэйд 2</span><span class="badge movie">Фильм</span><span class="item-meta">2002</span></div><span class="item-runtime">1 ч 57 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Blade+II+2002">IMDb</a></li>
+      <li class="item" data-id="nonmcu-daredevil-2003" data-mins="103"><button class="checkbox"></button><div class="item-main"><span class="item-title">Daredevil</span><span class="item-ru">Сорвиголова</span><span class="badge movie">Фильм</span><span class="item-meta">2003</span></div><span class="item-runtime">1 ч 43 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Daredevil+2003+Affleck">IMDb</a></li>
+      <li class="item" data-id="nonmcu-hulk-2003" data-mins="138"><button class="checkbox"></button><div class="item-main"><span class="item-title">Hulk</span><span class="item-ru">Халк</span><span class="badge movie">Фильм</span><span class="item-meta">2003 (Энг Ли)</span></div><span class="item-runtime">2 ч 18 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Hulk+2003+Ang+Lee">IMDb</a></li>
+      <li class="item" data-id="nonmcu-punisher-2004" data-mins="124"><button class="checkbox"></button><div class="item-main"><span class="item-title">The Punisher</span><span class="item-ru">Каратель</span><span class="badge movie">Фильм</span><span class="item-meta">2004</span></div><span class="item-runtime">2 ч 04 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Punisher+2004">IMDb</a></li>
+      <li class="item" data-id="nonmcu-blade-trinity" data-mins="113"><button class="checkbox"></button><div class="item-main"><span class="item-title">Blade: Trinity</span><span class="item-ru">Блэйд: Троица</span><span class="badge movie">Фильм</span><span class="item-meta">2004</span></div><span class="item-runtime">1 ч 53 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Blade+Trinity">IMDb</a></li>
+      <li class="item" data-id="nonmcu-elektra" data-mins="97"><button class="checkbox"></button><div class="item-main"><span class="item-title">Elektra</span><span class="item-ru">Электра</span><span class="badge movie">Фильм</span><span class="item-meta">2005</span></div><span class="item-runtime">1 ч 37 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Elektra+2005">IMDb</a></li>
+      <li class="item" data-id="nonmcu-ghost-rider" data-mins="114"><button class="checkbox"></button><div class="item-main"><span class="item-title">Ghost Rider</span><span class="item-ru">Призрачный гонщик</span><span class="badge movie">Фильм</span><span class="item-meta">2007</span></div><span class="item-runtime">1 ч 54 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Ghost+Rider+2007">IMDb</a></li>
+      <li class="item" data-id="nonmcu-punisher-warzone" data-mins="103"><button class="checkbox"></button><div class="item-main"><span class="item-title">Punisher: War Zone</span><span class="item-ru">Каратель: Территория войны</span><span class="badge movie">Фильм</span><span class="item-meta">2008</span></div><span class="item-runtime">1 ч 43 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Punisher+War+Zone">IMDb</a></li>
+      <li class="item" data-id="nonmcu-ghost-rider-2" data-mins="96"><button class="checkbox"></button><div class="item-main"><span class="item-title">Ghost Rider: Spirit of Vengeance</span><span class="item-ru">Призрачный гонщик 2</span><span class="badge movie">Фильм</span><span class="item-meta">2011</span></div><span class="item-runtime">1 ч 36 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Ghost+Rider+Spirit+of+Vengeance">IMDb</a></li>
+    </ul>
+
+    <div class="phase"><span>Другая анимация и спин-оффы</span></div>
+    <ul class="list" data-group="other-anim">
+      <li class="item" data-id="nonmcu-big-hero-6" data-mins="102"><button class="checkbox"></button><div class="item-main"><span class="item-title">Big Hero 6</span><span class="item-ru">Город героев</span><span class="badge anim">Анимация</span><span class="item-meta">2014 (Disney)</span></div><span class="item-runtime">1 ч 42 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Big+Hero+6">IMDb</a></li>
+      <li class="item" data-id="nonmcu-anime-ironman" data-mins="288"><button class="checkbox"></button><div class="item-main"><span class="item-title">Marvel Anime: Iron Man</span><span class="item-ru">Железный человек (аниме)</span><span class="badge anim">Анимация</span><span class="item-meta">2010</span></div><span class="item-runtime">~4 ч 48 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Marvel+Anime+Iron+Man">IMDb</a></li>
+      <li class="item" data-id="nonmcu-anime-wolverine" data-mins="288"><button class="checkbox"></button><div class="item-main"><span class="item-title">Marvel Anime: Wolverine</span><span class="item-ru">Росомаха (аниме)</span><span class="badge anim">Анимация</span><span class="item-meta">2011</span></div><span class="item-runtime">~4 ч 48 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Marvel+Anime+Wolverine">IMDb</a></li>
+      <li class="item" data-id="nonmcu-anime-xmen" data-mins="288"><button class="checkbox"></button><div class="item-main"><span class="item-title">Marvel Anime: X-Men</span><span class="item-ru">Люди Икс (аниме)</span><span class="badge anim">Анимация</span><span class="item-meta">2011</span></div><span class="item-runtime">~4 ч 48 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Marvel+Anime+X-Men">IMDb</a></li>
+      <li class="item" data-id="nonmcu-anime-blade" data-mins="288"><button class="checkbox"></button><div class="item-main"><span class="item-title">Marvel Anime: Blade</span><span class="item-ru">Блэйд (аниме)</span><span class="badge anim">Анимация</span><span class="item-meta">2011</span></div><span class="item-runtime">~4 ч 48 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Marvel+Anime+Blade">IMDb</a></li>
+    </ul>
+  </div>
+
+  <div id="achievements-view" class="hidden">
+    <div class="hero-card">
+      <div class="hero-rank-label">Текущее звание</div>
+      <h2 class="hero-rank-title" id="hero-rank">—</h2>
+      <div class="hero-rank-sub" id="hero-rank-sub"></div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-value" id="stat-watched">0</div>
+          <div class="hero-stat-label">Просмотрено</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value" id="stat-mcu">0%</div>
+          <div class="hero-stat-label">Канон MCU (проекты)</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value" id="stat-hours">0</div>
+          <div class="hero-stat-label">Часов просмотра</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value" id="stat-percent">0%</div>
+          <div class="hero-stat-label">Общий прогресс (проекты)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="progress-section">
+      <div class="progress-section-title">📊 Прогресс по разделам</div>
+      <div class="progress-row">
+        <div class="progress-header">
+          <span class="progress-name">Канон MCU 🦸</span>
+          <span class="progress-meta" id="prog-mcu-meta"></span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" id="prog-mcu" style="width:0%"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-header">
+          <span class="progress-name">Ретро-анимация 📺</span>
+          <span class="progress-meta" id="prog-retro-meta"></span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" id="prog-retro" style="width:0%"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-header">
+          <span class="progress-name">Вне канона MCU 🎭</span>
+          <span class="progress-meta" id="prog-noncanon-meta"></span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" id="prog-noncanon" style="width:0%"></div></div>
+      </div>
+    </div>
+
+    <div class="progress-section">
+      <div class="progress-section-title">🎬 Прогресс по фазам MCU</div>
+      <div class="progress-row">
+        <div class="progress-header"><span class="progress-name">Фаза 1 — Сага Бесконечности</span><span class="progress-meta" id="prog-p1-meta"></span></div>
+        <div class="progress-bar"><div class="progress-fill" id="prog-p1" style="width:0%"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-header"><span class="progress-name">Фаза 2</span><span class="progress-meta" id="prog-p2-meta"></span></div>
+        <div class="progress-bar"><div class="progress-fill" id="prog-p2" style="width:0%"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-header"><span class="progress-name">Фаза 3</span><span class="progress-meta" id="prog-p3-meta"></span></div>
+        <div class="progress-bar"><div class="progress-fill" id="prog-p3" style="width:0%"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-header"><span class="progress-name">Фаза 4 — Мультивселенная</span><span class="progress-meta" id="prog-p4-meta"></span></div>
+        <div class="progress-bar"><div class="progress-fill" id="prog-p4" style="width:0%"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-header"><span class="progress-name">Фаза 5</span><span class="progress-meta" id="prog-p5-meta"></span></div>
+        <div class="progress-bar"><div class="progress-fill" id="prog-p5" style="width:0%"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-header"><span class="progress-name">Фаза 6 — Грядущее</span><span class="progress-meta" id="prog-p6-meta"></span></div>
+        <div class="progress-bar"><div class="progress-fill" id="prog-p6" style="width:0%"></div></div>
+      </div>
+    </div>
+
+    <div class="progress-section">
+      <div class="progress-section-title">🎭 Прогресс по разделам «Вне канона MCU»</div>
+      <div class="progress-row">
+        <div class="progress-header"><span class="progress-name">Spider-Man (Sony)</span><span class="progress-meta" id="prog-spider-sony-meta"></span></div>
+        <div class="progress-bar"><div class="progress-fill" id="prog-spider-sony" style="width:0%"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-header"><span class="progress-name">Sony's Spider-Man Universe</span><span class="progress-meta" id="prog-ssu-meta"></span></div>
+        <div class="progress-bar"><div class="progress-fill" id="prog-ssu" style="width:0%"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-header"><span class="progress-name">X-Men (Fox)</span><span class="progress-meta" id="prog-xmen-fox-meta"></span></div>
+        <div class="progress-bar"><div class="progress-fill" id="prog-xmen-fox" style="width:0%"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-header"><span class="progress-name">Fantastic Four (Fox)</span><span class="progress-meta" id="prog-ff-fox-meta"></span></div>
+        <div class="progress-bar"><div class="progress-fill" id="prog-ff-fox" style="width:0%"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-header"><span class="progress-name">Marvel Netflix (Defenders Saga)</span><span class="progress-meta" id="prog-netflix-meta"></span></div>
+        <div class="progress-bar"><div class="progress-fill" id="prog-netflix" style="width:0%"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-header"><span class="progress-name">Marvel TV (ABC / Hulu / Freeform)</span><span class="progress-meta" id="prog-marvel-tv-meta"></span></div>
+        <div class="progress-bar"><div class="progress-fill" id="prog-marvel-tv" style="width:0%"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-header"><span class="progress-name">Старая классика (до 2008)</span><span class="progress-meta" id="prog-classic-pre2008-meta"></span></div>
+        <div class="progress-bar"><div class="progress-fill" id="prog-classic-pre2008" style="width:0%"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-header"><span class="progress-name">Другая анимация и спин-оффы</span><span class="progress-meta" id="prog-other-anim-meta"></span></div>
+        <div class="progress-bar"><div class="progress-fill" id="prog-other-anim" style="width:0%"></div></div>
+      </div>
+    </div>
+
+    <div class="progress-section">
+      <div class="progress-section-title">📺 Прогресс по разделам «Ретро-анимация»</div>
+      <div class="progress-row">
+        <div class="progress-header"><span class="progress-name">Marvel Animated Universe (90-е)</span><span class="progress-meta" id="prog-mau-90s-meta"></span></div>
+        <div class="progress-bar"><div class="progress-fill" id="prog-mau-90s" style="width:0%"></div></div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-header"><span class="progress-name">Другие классические мультсериалы</span><span class="progress-meta" id="prog-classic-other-meta"></span></div>
+        <div class="progress-bar"><div class="progress-fill" id="prog-classic-other" style="width:0%"></div></div>
+      </div>
+    </div>
+
+    <div class="progress-section">
+      <div class="progress-section-title">📈 Интересные факты</div>
+      <div id="fun-facts"></div>
+    </div>
+
+    <div class="progress-section">
+      <div class="progress-section-title">🏆 Ачивки <span class="progress-meta" id="ach-count"></span></div>
+      <div class="achievements-grid" id="achievements-grid"></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-actions">
+    <button class="footer-btn" onclick="exportData()">💾 Экспорт прогресса</button>
+    <button class="footer-btn" onclick="document.getElementById('import-file').click()">📂 Импорт прогресса</button>
+    <button class="footer-btn danger" onclick="resetAll()">🗑️ Сбросить всё</button>
+    <input type="file" id="import-file" accept="application/json,.json" style="display:none" onchange="importData(event)">
+  </div>
+  <div class="footer-note">
+    💡 Прогресс и оценки сохраняются в браузере. Используй экспорт чтобы сохранить копию или перенести на другое устройство.
+  </div>
+  <div class="footer-credits">
+    Автор: Алина, <a href="https://t.me/purplebluebooks" target="_blank">PURPLEBLUEBOOK</a>. Актуально на: <span id="footer-date">28.05.2026</span>
+  </div>
+</footer>
+
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const views = {
+    mcu: document.getElementById('mcu-view'),
+    retro: document.getElementById('retro-view'),
+    noncanon: document.getElementById('noncanon-view'),
+    achievements: document.getElementById('achievements-view'),
+  };
+  const search = document.getElementById('search');
+  const STORAGE_KEY = 'mcu-watched';
+  const RATINGS_KEY = 'mcu-ratings';
+
+  function loadWatched() {
+    try { return new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')); }
+    catch { return new Set(); }
+  }
+
+  function saveWatched(set) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify([...set])); } catch {}
+  }
+
+  function loadRatings() {
+    try { return JSON.parse(localStorage.getItem(RATINGS_KEY) || '{}'); }
+    catch { return {}; }
+  }
+
+  function saveRatings(obj) {
+    try { localStorage.setItem(RATINGS_KEY, JSON.stringify(obj)); } catch {}
+  }
+
+  let watched = loadWatched();
+  let ratings = loadRatings();
+
+  function formatMinutes(mins) {
+    if (mins <= 0) return '—';
+    const h = Math.floor(mins / 60);
+    const m = mins % 60;
+    if (h === 0) return `${m} м`;
+    if (m === 0) return `${h} ч`;
+    return `${h} ч ${m.toString().padStart(2, '0')} м`;
+  }
+
+  function applyWatched() {
+    document.querySelectorAll('.item').forEach(item => {
+      const id = item.dataset.id;
+      const isWatched = watched.has(id);
+      item.classList.toggle('watched', isWatched);
+      item.querySelector('.checkbox').classList.toggle('checked', isWatched);
+    });
+  }
+
+  document.querySelectorAll('.checkbox').forEach(cb => {
+    cb.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const item = cb.closest('.item');
+      const id = item.dataset.id;
+      if (watched.has(id)) watched.delete(id);
+      else watched.add(id);
+      saveWatched(watched);
+      document.querySelectorAll(`.item[data-id="${id}"]`).forEach(el => {
+        el.classList.toggle('watched', watched.has(id));
+        el.querySelector('.checkbox').classList.toggle('checked', watched.has(id));
+      });
+      updateCounts();
+    });
+  });
+
+  function resetAll() {
+    if (!confirm('Сбросить все галочки и оценки? Это действие необратимо.')) return;
+    watched.clear();
+    ratings = {};
+    saveWatched(watched);
+    saveRatings(ratings);
+    applyWatched();
+    renderAllRatings();
+    updateCounts();
+  }
+  window.resetAll = resetAll;
+
+  function exportData() {
+    const data = {
+      version: 1,
+      exportedAt: new Date().toISOString(),
+      watched: [...watched],
+      ratings: ratings,
+    };
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    const date = new Date().toISOString().split('T')[0];
+    a.href = url;
+    a.download = `marvel-progress-${date}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+  window.exportData = exportData;
+
+  function importData(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const data = JSON.parse(e.target.result);
+        if (!data || (!Array.isArray(data.watched) && !data.ratings)) {
+          alert('Это не похоже на файл прогресса.');
+          return;
+        }
+        const wCount = Array.isArray(data.watched) ? data.watched.length : 0;
+        const rCount = data.ratings ? Object.keys(data.ratings).length : 0;
+        const exportedAt = data.exportedAt ? new Date(data.exportedAt).toLocaleString('ru-RU') : 'неизвестно';
+        if (!confirm(`Импортировать прогресс?\n\nГалочек: ${wCount}\nОценок: ${rCount}\nВыгружено: ${exportedAt}\n\nТекущий прогресс будет заменён.`)) {
+          event.target.value = '';
+          return;
+        }
+        if (Array.isArray(data.watched)) {
+          watched = new Set(data.watched);
+          saveWatched(watched);
+        }
+        if (data.ratings && typeof data.ratings === 'object') {
+          ratings = data.ratings;
+          saveRatings(ratings);
+        }
+        applyWatched();
+        renderAllRatings();
+        updateCounts();
+        alert('Прогресс успешно импортирован!');
+      } catch (err) {
+        alert('Не удалось прочитать файл: ' + err.message);
+      }
+      event.target.value = '';
+    };
+    reader.readAsText(file);
+  }
+  window.importData = importData;
+
+  // ===== Звёзды оценок (10 баллов) =====
+  function renderRating(itemEl) {
+    const id = itemEl.dataset.id;
+    const value = ratings[id] || 0;
+    let existing = itemEl.querySelector('.rating');
+    if (!existing) {
+      existing = document.createElement('div');
+      existing.className = 'rating';
+      // Вставляем перед imdb-link
+      const imdbLink = itemEl.querySelector('.imdb-link');
+      itemEl.insertBefore(existing, imdbLink);
+    }
+    let html = '';
+    for (let i = 1; i <= 5; i++) {
+      // Каждая звезда = 2 балла. half = (i*2-1), full = i*2
+      const halfVal = i * 2 - 1;
+      const fullVal = i * 2;
+      let cls = '';
+      if (value >= fullVal) cls = 'filled';
+      else if (value >= halfVal) cls = 'half';
+      html += `<span class="rating-star ${cls}" data-val="${fullVal}" data-half="${halfVal}">★</span>`;
+    }
+    html += `<span class="rating-value">${value > 0 ? value + '/10' : ''}</span>`;
+    if (value > 0) {
+      html += `<span class="rating-clear" title="Убрать оценку">✕</span>`;
+    }
+    existing.innerHTML = html;
+  }
+
+  function renderAllRatings() {
+    document.querySelectorAll('.item').forEach(renderRating);
+  }
+
+  // Делегирование кликов по звёздам и крестику
+  document.addEventListener('click', (e) => {
+    const star = e.target.closest('.rating-star');
+    const clear = e.target.closest('.rating-clear');
+    if (!star && !clear) return;
+    const item = (star || clear).closest('.item');
+    if (!item) return;
+    e.stopPropagation();
+    const id = item.dataset.id;
+    if (clear) {
+      delete ratings[id];
+    } else if (star) {
+      // Клик по правой половине звезды = полный балл, по левой = половинный
+      const rect = star.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const isLeftHalf = clickX < rect.width / 2;
+      const newValue = isLeftHalf ? parseInt(star.dataset.half) : parseInt(star.dataset.val);
+      // Если кликнули на то же значение что уже стоит — сбросить
+      ratings[id] = (ratings[id] === newValue) ? 0 : newValue;
+      if (ratings[id] === 0) delete ratings[id];
+    }
+    saveRatings(ratings);
+    renderRating(item);
+  });
+  // ===== Конец звёзд =====
+
+  function switchTab(tabName) {
+    tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === tabName));
+    Object.entries(views).forEach(([key, el]) => {
+      el.classList.toggle('hidden', key !== tabName);
+    });
+    // Поиск не нужен на вкладке достижений — там нечего искать
+    search.style.display = tabName === 'achievements' ? 'none' : '';
+    filter();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Event delegation: один обработчик на контейнер вкладок
+  const tabsContainer = document.querySelector('.tabs');
+  tabsContainer.addEventListener('click', (e) => {
+    const tab = e.target.closest('.tab');
+    if (tab && tab.dataset.tab) {
+      switchTab(tab.dataset.tab);
+    }
+  });
+
+  // Переключатель «По дате / По хронологии» внутри вкладки MCU
+  const mcuModeToggle = document.querySelector('.mcu-mode-toggle');
+  if (mcuModeToggle) {
+    mcuModeToggle.addEventListener('click', (e) => {
+      const btn = e.target.closest('.mode-btn');
+      if (!btn) return;
+      const mode = btn.dataset.mode;
+      mcuModeToggle.querySelectorAll('.mode-btn').forEach(b => {
+        b.classList.toggle('active', b === btn);
+      });
+      const releaseView = document.getElementById('release-view');
+      const chronoView = document.getElementById('chrono-view');
+      releaseView.classList.toggle('active', mode === 'release');
+      chronoView.classList.toggle('active', mode === 'chrono');
+      filter();
+    });
+  }
+
+  function computePhaseTotals() {
+    // Считаем суммы по фазам (только в release-view)
+    let mcuTotal = 0;
+    let mcuWatched = 0;
+    document.querySelectorAll('#release-view [data-phase]').forEach(phaseList => {
+      const phaseId = phaseList.dataset.phase;
+      let total = 0, done = 0;
+      phaseList.querySelectorAll('.item:not([data-unreleased])').forEach(item => {
+        const mins = parseInt(item.dataset.mins) || 0;
+        total += mins;
+        mcuTotal += mins;
+        if (watched.has(item.dataset.id)) {
+          done += mins;
+          mcuWatched += mins;
+        }
+      });
+      const label = document.querySelector(`[data-phase-id="${phaseId}"]`);
+      if (label) label.textContent = `${formatMinutes(done)} / ${formatMinutes(total)}`;
+    });
+    const mcuPct = mcuTotal > 0 ? Math.round((mcuWatched / mcuTotal) * 100) : 0;
+    document.getElementById('mcu-total').textContent = `${formatMinutes(mcuWatched)} / ${formatMinutes(mcuTotal)} · ${mcuPct}% по часам`;
+
+    // Сумма по ретро
+    let retroTotal = 0, retroWatched = 0;
+    document.querySelectorAll('#retro-view .item:not([data-unreleased])').forEach(item => {
+      const mins = parseInt(item.dataset.mins) || 0;
+      retroTotal += mins;
+      if (watched.has(item.dataset.id)) retroWatched += mins;
+    });
+    const retroPct = retroTotal > 0 ? Math.round((retroWatched / retroTotal) * 100) : 0;
+    document.getElementById('retro-total').textContent = `${formatMinutes(retroWatched)} / ${formatMinutes(retroTotal)} · ${retroPct}% по часам`;
+
+    // Сумма по вне канона
+    let noncanonTotal = 0, noncanonWatched = 0;
+    document.querySelectorAll('#noncanon-view .item:not([data-unreleased])').forEach(item => {
+      const mins = parseInt(item.dataset.mins) || 0;
+      noncanonTotal += mins;
+      if (watched.has(item.dataset.id)) noncanonWatched += mins;
+    });
+    const noncanonPct = noncanonTotal > 0 ? Math.round((noncanonWatched / noncanonTotal) * 100) : 0;
+    document.getElementById('noncanon-total').textContent = `${formatMinutes(noncanonWatched)} / ${formatMinutes(noncanonTotal)} · ${noncanonPct}% по часам`;
+  }
+
+  function updateCounts() {
+    // Для MCU считаем только release-view (release и chrono — одно и то же по содержанию)
+    const mcuItems = document.querySelectorAll('#release-view .item:not([data-unreleased])');
+    const mcuDone = [...mcuItems].filter(i => watched.has(i.dataset.id)).length;
+    const mcuCountEl = document.getElementById('mcu-count');
+    if (mcuCountEl) mcuCountEl.textContent = `Просмотрено: ${mcuDone} из ${mcuItems.length}`;
+
+    // Остальные вкладки (retro, noncanon) — как было
+    ['retro', 'noncanon'].forEach(key => {
+      const view = views[key];
+      if (!view) return;
+      const total = view.querySelectorAll('.item:not([data-unreleased])').length;
+      const done = [...view.querySelectorAll('.item:not([data-unreleased])')].filter(i => watched.has(i.dataset.id)).length;
+      const el = document.getElementById(`${key}-count`);
+      if (el) el.textContent = `Просмотрено: ${done} из ${total}`;
+    });
+
+    computePhaseTotals();
+    updateAchievements();
+  }
+
+  // ===== Достижения =====
+  const RANKS = [
+    { min: 0, title: "Цивил", sub: "Слышала про Тони Старка, но не уверена" },
+    { min: 5, title: "Любопытный наблюдатель", sub: "Кое-что начинает складываться" },
+    { min: 15, title: "Союзник Щ.И.Т.", sub: "Колсон бы тобой гордился" },
+    { min: 30, title: "Стажёр Мстителей", sub: "Тебе уже выдают пропуск в башню" },
+    { min: 50, title: "Мститель", sub: "Готова сражаться плечом к плечу" },
+    { min: 80, title: "Хранитель Камней", sub: "Знаешь больше, чем стоило бы" },
+    { min: 110, title: "Старейшина Вечных", sub: "Ты видела то, чего другие не помнят" },
+    { min: 140, title: "Стрэндж-уровень", sub: "Просматриваешь мультивселенную" },
+    { min: 999, title: "ВАТЧЕР", sub: "Я наблюдаю. Но не вмешиваюсь." }
+  ];
+
+  // Получить ранг по числу просмотренных проектов
+  function getRank(count) {
+    let current = RANKS[0];
+    for (const r of RANKS) {
+      if (count >= r.min) current = r;
+    }
+    return current;
+  }
+
+  // Уникальные ID, относящиеся к канону MCU (берём release-view, он покрывает всё без дублей)
+  function getMcuStats() {
+    const items = document.querySelectorAll('#release-view .item:not([data-unreleased])');
+    let total = 0, done = 0, totalMins = 0, doneMins = 0;
+    items.forEach(item => {
+      const mins = parseInt(item.dataset.mins) || 0;
+      total++;
+      totalMins += mins;
+      if (watched.has(item.dataset.id)) {
+        done++;
+        doneMins += mins;
+      }
+    });
+    return { total, done, totalMins, doneMins };
+  }
+
+  function getSectionStats(viewEl) {
+    const items = viewEl.querySelectorAll('.item:not([data-unreleased])');
+    let total = 0, done = 0, totalMins = 0, doneMins = 0;
+    items.forEach(item => {
+      const mins = parseInt(item.dataset.mins) || 0;
+      total++;
+      totalMins += mins;
+      if (watched.has(item.dataset.id)) {
+        done++;
+        doneMins += mins;
+      }
+    });
+    return { total, done, totalMins, doneMins };
+  }
+
+  function getPhaseStats(phaseId) {
+    const items = document.querySelectorAll(`[data-phase="${phaseId}"] .item:not([data-unreleased])`);
+    let total = 0, done = 0, totalMins = 0, doneMins = 0;
+    items.forEach(item => {
+      const mins = parseInt(item.dataset.mins) || 0;
+      total++;
+      totalMins += mins;
+      if (watched.has(item.dataset.id)) {
+        done++;
+        doneMins += mins;
+      }
+    });
+    return { total, done, totalMins, doneMins };
+  }
+
+  function getGroupStats(groupId) {
+    const items = document.querySelectorAll(`[data-group="${groupId}"] .item:not([data-unreleased])`);
+    let total = 0, done = 0, totalMins = 0, doneMins = 0;
+    items.forEach(item => {
+      const mins = parseInt(item.dataset.mins) || 0;
+      total++;
+      totalMins += mins;
+      if (watched.has(item.dataset.id)) {
+        done++;
+        doneMins += mins;
+      }
+    });
+    return { total, done, totalMins, doneMins };
+  }
+
+  function setProgressBar(id, done, total) {
+    const fill = document.getElementById(`prog-${id}`);
+    const meta = document.getElementById(`prog-${id}-meta`);
+    if (!fill || !meta) return;
+    const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+    fill.style.width = pct + '%';
+    fill.classList.toggle('full', pct === 100 && total > 0);
+    meta.textContent = `${done} / ${total} · ${pct}%`;
+  }
+
+  // Список ачивок: { id, icon, title, desc, check(stats) => bool }
+  // Хелпер: сколько из массива id отмечено / всего
+  function progressFromIds(s, ids) {
+    return [ids.filter(id => s.watched.has(id)).length, ids.length];
+  }
+
+  const ACHIEVEMENTS = [
+    // ===== Начало пути =====
+    { id: 'first-step', icon: '👣', title: 'Первые шаги', desc: 'Просмотреть свой первый MCU-проект',
+      check: s => s.totalDone >= 1,
+      progress: s => [Math.min(s.totalDone, 1), 1] },
+    { id: 'iron-start', icon: '🤖', title: 'Я — Железный человек',  desc: 'Посмотреть Iron Man (2008)',
+      check: s => s.watched.has('iron-man-1'),
+      progress: s => [s.watched.has('iron-man-1') ? 1 : 0, 1] },
+
+    // ===== Ключевые моменты MCU =====
+    { id: 'snap', icon: '🫰', title: 'Щелчок', desc: 'Посмотреть Infinity War',
+      check: s => s.watched.has('infinity-war'),
+      progress: s => [s.watched.has('infinity-war') ? 1 : 0, 1] },
+    { id: 'endgame', icon: '🎯', title: 'Я неизбежна', desc: 'Посмотреть Endgame',
+      check: s => s.watched.has('endgame'),
+      progress: s => [s.watched.has('endgame') ? 1 : 0, 1] },
+    { id: 'avengers-trinity', icon: '⚔️', title: 'Святая троица', desc: 'Все 4 фильма Мстителей',
+      check: s => ['avengers-1','ultron','infinity-war','endgame'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['avengers-1','ultron','infinity-war','endgame']) },
+
+    // ===== Фазы MCU =====
+    { id: 'phase1-done', icon: '🛡️', title: 'Сборка завершена', desc: 'Закрыть всю Фазу 1',
+      check: s => s.phases.p1.done === s.phases.p1.total && s.phases.p1.total > 0,
+      progress: s => [s.phases.p1.done, s.phases.p1.total] },
+    { id: 'phase2-done', icon: '⚙️', title: 'Эра Альтрона', desc: 'Закрыть всю Фазу 2',
+      check: s => s.phases.p2.done === s.phases.p2.total && s.phases.p2.total > 0,
+      progress: s => [s.phases.p2.done, s.phases.p2.total] },
+    { id: 'phase3-done', icon: '💎', title: 'Сага Бесконечности', desc: 'Закрыть всю Фазу 3',
+      check: s => s.phases.p3.done === s.phases.p3.total && s.phases.p3.total > 0,
+      progress: s => [s.phases.p3.done, s.phases.p3.total] },
+    { id: 'phase4-done', icon: '🌀', title: 'Мультивселенная', desc: 'Закрыть всю Фазу 4',
+      check: s => s.phases.p4.done === s.phases.p4.total && s.phases.p4.total > 0,
+      progress: s => [s.phases.p4.done, s.phases.p4.total] },
+    { id: 'phase5-done', icon: '⚡', title: 'Громовержец', desc: 'Закрыть всю Фазу 5',
+      check: s => s.phases.p5.done === s.phases.p5.total && s.phases.p5.total > 0,
+      progress: s => [s.phases.p5.done, s.phases.p5.total] },
+
+    // ===== Сольные саги героев =====
+    { id: 'iron-saga', icon: '🦾', title: 'Железный фанат', desc: 'Все фильмы об Iron Man (включая аниме)',
+      check: s => ['iron-man-1','iron-man-2','iron-man-3','retro-ironman-94','nonmcu-anime-ironman'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['iron-man-1','iron-man-2','iron-man-3','retro-ironman-94','nonmcu-anime-ironman']) },
+    { id: 'cap-collector', icon: '🛡️', title: 'За Америку!', desc: 'Все фильмы о Капитане Америка (с 1990 года)',
+      check: s => ['captain-america-1','winter-soldier','civil-war','brave-new-world','nonmcu-captain-america-90'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['captain-america-1','winter-soldier','civil-war','brave-new-world','nonmcu-captain-america-90']) },
+    { id: 'asgard', icon: '⚡', title: 'Дитя Асгарда', desc: 'Все 4 фильма о Торе',
+      check: s => ['thor-1','thor-2','ragnarok','love-thunder'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['thor-1','thor-2','ragnarok','love-thunder']) },
+    { id: 'hulk-master', icon: '💚', title: 'Зелёный гигант', desc: 'Все фильмы и сериалы о Халке (любая эпоха)',
+      check: s => ['incredible-hulk','she-hulk','nonmcu-hulk-2003','retro-hulk-96','retro-hulk-agents'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['incredible-hulk','she-hulk','nonmcu-hulk-2003','retro-hulk-96','retro-hulk-agents']) },
+    { id: 'wakanda-king', icon: '🐆', title: 'Wakanda Forever', desc: 'Всё про Ваканду (Пантеры × 2, Айронхарт, Глаза Ваканды)',
+      check: s => ['black-panther-1','wakanda-forever','ironheart','eyes-wakanda'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['black-panther-1','wakanda-forever','ironheart','eyes-wakanda']) },
+    { id: 'sorcerer-supreme', icon: '🔮', title: 'Верховный чародей', desc: 'Все магические истории MCU (Стрэндж, Ванда, Агата, Лунный, Оборотень)',
+      check: s => ['doctor-strange-1','ds-multiverse','wandavision','agatha','moon-knight','werewolf'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['doctor-strange-1','ds-multiverse','wandavision','agatha','moon-knight','werewolf']) },
+    { id: 'guardians-all', icon: '👽', title: 'Я есть Грут', desc: 'Все 3 части Стражей Галактики',
+      check: s => ['gotg-1','gotg-2','gotg-3'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['gotg-1','gotg-2','gotg-3']) },
+    { id: 'cosmic-traveler', icon: '🚀', title: 'Космический путешественник', desc: 'Все три Стражей + Marvels + Captain Marvel + Eternals + Ragnarok',
+      check: s => ['gotg-1','gotg-2','gotg-3','captain-marvel','marvels','eternals','ragnarok'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['gotg-1','gotg-2','gotg-3','captain-marvel','marvels','eternals','ragnarok']) },
+
+    // ===== Человек-паук =====
+    { id: 'spider-trio', icon: '🕷️', title: 'Три паука', desc: 'Все 3 фильма Холланда в MCU',
+      check: s => ['spider-homecoming','far-from-home','no-way-home'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['spider-homecoming','far-from-home','no-way-home']) },
+    { id: 'sony-spider', icon: '🕸️', title: 'Спайди-мультивёрс', desc: 'Все Spider-Man фильмы Sony (без MCU)',
+      check: s => ['nonmcu-spider-2002','nonmcu-spider-2-2004','nonmcu-spider-3-2007','nonmcu-amazing-spider-2012','nonmcu-amazing-spider-2-2014','nonmcu-spiderverse-2018','nonmcu-spiderverse-2023'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['nonmcu-spider-2002','nonmcu-spider-2-2004','nonmcu-spider-3-2007','nonmcu-amazing-spider-2012','nonmcu-amazing-spider-2-2014','nonmcu-spiderverse-2018','nonmcu-spiderverse-2023']) },
+    { id: 'spider-saga', icon: '🕸️', title: 'Все паучьи киноистории', desc: 'Все игровые фильмы и сериалы про Человека-паука',
+      check: s => ['spider-homecoming','far-from-home','no-way-home','nonmcu-spider-2002','nonmcu-spider-2-2004','nonmcu-spider-3-2007','nonmcu-amazing-spider-2012','nonmcu-amazing-spider-2-2014','nonmcu-spider-noir'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['spider-homecoming','far-from-home','no-way-home','nonmcu-spider-2002','nonmcu-spider-2-2004','nonmcu-spider-3-2007','nonmcu-amazing-spider-2012','nonmcu-amazing-spider-2-2014','nonmcu-spider-noir']) },
+    { id: 'true-spider', icon: '🌐', title: 'Истинный спайдифан', desc: 'Все Человеки-пауки во всех вселенных (вкл. анимацию и ретро)',
+      check: s => ['spider-homecoming','far-from-home','no-way-home','friendly-spider','nonmcu-spider-2002','nonmcu-spider-2-2004','nonmcu-spider-3-2007','nonmcu-amazing-spider-2012','nonmcu-amazing-spider-2-2014','nonmcu-spider-noir','nonmcu-spiderverse-2018','nonmcu-spiderverse-2023','retro-spider-tas','retro-spider-unlimited','retro-spider-amazing','retro-ultimate-spider'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['spider-homecoming','far-from-home','no-way-home','friendly-spider','nonmcu-spider-2002','nonmcu-spider-2-2004','nonmcu-spider-3-2007','nonmcu-amazing-spider-2012','nonmcu-amazing-spider-2-2014','nonmcu-spider-noir','nonmcu-spiderverse-2018','nonmcu-spiderverse-2023','retro-spider-tas','retro-spider-unlimited','retro-spider-amazing','retro-ultimate-spider']) },
+
+    // ===== Fox / X-Men =====
+    { id: 'wolverine-saga', icon: '🗡️', title: 'Лучший в том, что он делает', desc: 'Все игровые фильмы с Росомахой',
+      check: s => ['nonmcu-wolverine-origins','nonmcu-the-wolverine','nonmcu-logan','deadpool-wolverine'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['nonmcu-wolverine-origins','nonmcu-the-wolverine','nonmcu-logan','deadpool-wolverine']) },
+    { id: 'pool-of-dead', icon: '💀', title: 'Сорвавшийся с цепи', desc: 'Все 3 фильма с Дэдпулом',
+      check: s => ['nonmcu-deadpool-1','nonmcu-deadpool-2','deadpool-wolverine'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['nonmcu-deadpool-1','nonmcu-deadpool-2','deadpool-wolverine']) },
+    { id: 'fox-xmen', icon: '🦴', title: 'Студент Ксавьера', desc: 'Все 13 фильмов X-Men от Fox',
+      check: s => ['nonmcu-xmen-2000','nonmcu-x2','nonmcu-xmen-3','nonmcu-wolverine-origins','nonmcu-first-class','nonmcu-the-wolverine','nonmcu-dofp','nonmcu-deadpool-1','nonmcu-apocalypse','nonmcu-logan','nonmcu-deadpool-2','nonmcu-dark-phoenix','nonmcu-new-mutants'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['nonmcu-xmen-2000','nonmcu-x2','nonmcu-xmen-3','nonmcu-wolverine-origins','nonmcu-first-class','nonmcu-the-wolverine','nonmcu-dofp','nonmcu-deadpool-1','nonmcu-apocalypse','nonmcu-logan','nonmcu-deadpool-2','nonmcu-dark-phoenix','nonmcu-new-mutants']) },
+    { id: 'ff-fantastic', icon: '4️⃣', title: 'Фантастическая коллекция', desc: 'Все фильмы про Фантастическую четвёрку',
+      check: s => ['ff-first-steps','nonmcu-ff-2005','nonmcu-ff-2007','nonmcu-ff-2015','nonmcu-ff-corman','retro-ff-94'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['ff-first-steps','nonmcu-ff-2005','nonmcu-ff-2007','nonmcu-ff-2015','nonmcu-ff-corman','retro-ff-94']) },
+
+    // ===== Sony и тёмные углы =====
+    { id: 'blade-trinity', icon: '🧛', title: 'Истребитель вампиров', desc: 'Все 3 Blade + Marvel Anime: Blade',
+      check: s => ['nonmcu-blade-1','nonmcu-blade-2','nonmcu-blade-trinity','nonmcu-anime-blade'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['nonmcu-blade-1','nonmcu-blade-2','nonmcu-blade-trinity','nonmcu-anime-blade']) },
+    { id: 'ghost-rider-fan', icon: '🔥', title: 'Дух мщения', desc: 'Оба фильма о Призрачном гонщике',
+      check: s => ['nonmcu-ghost-rider','nonmcu-ghost-rider-2'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['nonmcu-ghost-rider','nonmcu-ghost-rider-2']) },
+    { id: 'punisher-army', icon: '☠️', title: 'Один против всех', desc: 'Все фильмы и сериалы про Карателя',
+      check: s => ['nonmcu-punisher-89','nonmcu-punisher-2004','nonmcu-punisher-warzone','nonmcu-pun-s1','nonmcu-pun-s2'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['nonmcu-punisher-89','nonmcu-punisher-2004','nonmcu-punisher-warzone','nonmcu-pun-s1','nonmcu-pun-s2']) },
+
+    // ===== Сериалы и TV-эры =====
+    { id: 'tv-fan', icon: '📺', title: 'Сериаломан', desc: 'Посмотреть 5 сериалов Disney+',
+      check: s => {
+        const tv = ['wandavision','falcon-ws','loki-s1','hawkeye','moon-knight','ms-marvel','she-hulk','secret-invasion','loki-s2','echo','agatha','daredevil-ba-s1','ironheart','wonder-man'];
+        return tv.filter(id => s.watched.has(id)).length >= 5;
+      },
+      progress: s => {
+        const tv = ['wandavision','falcon-ws','loki-s1','hawkeye','moon-knight','ms-marvel','she-hulk','secret-invasion','loki-s2','echo','agatha','daredevil-ba-s1','ironheart','wonder-man'];
+        return [Math.min(tv.filter(id => s.watched.has(id)).length, 5), 5];
+      }},
+    { id: 'defenders', icon: '🥊', title: 'Защитник Адской Кухни', desc: 'Вся The Defenders Saga (Netflix)',
+      check: s => ['nonmcu-dd-s1','nonmcu-dd-s2','nonmcu-dd-s3','nonmcu-jj-s1','nonmcu-jj-s2','nonmcu-jj-s3','nonmcu-luke-s1','nonmcu-luke-s2','nonmcu-iron-s1','nonmcu-iron-s2','nonmcu-defenders','nonmcu-pun-s1','nonmcu-pun-s2'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['nonmcu-dd-s1','nonmcu-dd-s2','nonmcu-dd-s3','nonmcu-jj-s1','nonmcu-jj-s2','nonmcu-jj-s3','nonmcu-luke-s1','nonmcu-luke-s2','nonmcu-iron-s1','nonmcu-iron-s2','nonmcu-defenders','nonmcu-pun-s1','nonmcu-pun-s2']) },
+    { id: 'devil-of-hk', icon: '😈', title: 'Дьявол Адской Кухни', desc: 'Все игровые проекты о Сорвиголове',
+      check: s => ['daredevil-ba-s1','daredevil-ba-s2','nonmcu-daredevil-2003','nonmcu-dd-s1','nonmcu-dd-s2','nonmcu-dd-s3'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['daredevil-ba-s1','daredevil-ba-s2','nonmcu-daredevil-2003','nonmcu-dd-s1','nonmcu-dd-s2','nonmcu-dd-s3']) },
+    { id: 'jessica-jones', icon: '🥃', title: 'Алкаш с суперсилами', desc: 'Все 3 сезона Джессики Джонс — единственный женский сольник Netflix',
+      check: s => ['nonmcu-jj-s1','nonmcu-jj-s2','nonmcu-jj-s3'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['nonmcu-jj-s1','nonmcu-jj-s2','nonmcu-jj-s3']) },
+
+    // ===== Анимация и спин-оффы =====
+    { id: 'anime-watcher', icon: '🎌', title: 'Любитель аниме', desc: 'Вся четвёрка Marvel Anime',
+      check: s => ['nonmcu-anime-ironman','nonmcu-anime-wolverine','nonmcu-anime-xmen','nonmcu-anime-blade'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['nonmcu-anime-ironman','nonmcu-anime-wolverine','nonmcu-anime-xmen','nonmcu-anime-blade']) },
+    { id: 'retro-explorer', icon: '📼', title: 'Археолог 90-х', desc: '5+ проектов из ретро-анимации',
+      check: s => s.retro.done >= 5,
+      progress: s => [Math.min(s.retro.done, 5), 5] },
+
+    // ===== Эпохи и мультивселенная =====
+    { id: 'before-feige', icon: '📜', title: 'Помнит до Файги', desc: '5+ фильмов Marvel из эпохи до 2008 (вне канона)',
+      check: s => {
+        const old = ['nonmcu-howard-duck','nonmcu-punisher-89','nonmcu-captain-america-90','nonmcu-ff-corman','nonmcu-generation-x','nonmcu-blade-1','nonmcu-blade-2','nonmcu-daredevil-2003','nonmcu-hulk-2003','nonmcu-punisher-2004','nonmcu-blade-trinity','nonmcu-elektra','nonmcu-ghost-rider','nonmcu-spider-2002','nonmcu-spider-2-2004','nonmcu-spider-3-2007'];
+        return old.filter(id => s.watched.has(id)).length >= 5;
+      },
+      progress: s => {
+        const old = ['nonmcu-howard-duck','nonmcu-punisher-89','nonmcu-captain-america-90','nonmcu-ff-corman','nonmcu-generation-x','nonmcu-blade-1','nonmcu-blade-2','nonmcu-daredevil-2003','nonmcu-hulk-2003','nonmcu-punisher-2004','nonmcu-blade-trinity','nonmcu-elektra','nonmcu-ghost-rider','nonmcu-spider-2002','nonmcu-spider-2-2004','nonmcu-spider-3-2007'];
+        return [Math.min(old.filter(id => s.watched.has(id)).length, 5), 5];
+      }},
+    { id: 'first-decade', icon: '🎂', title: 'Первая декада MCU', desc: 'Вся Сага Бесконечности — Фазы 1, 2 и 3 целиком',
+      check: s => s.phases.p1.done === s.phases.p1.total && s.phases.p1.total > 0
+               && s.phases.p2.done === s.phases.p2.total && s.phases.p2.total > 0
+               && s.phases.p3.done === s.phases.p3.total && s.phases.p3.total > 0,
+      progress: s => [s.phases.p1.done + s.phases.p2.done + s.phases.p3.done, s.phases.p1.total + s.phases.p2.total + s.phases.p3.total] },
+    { id: 'kang-survivor', icon: '⏳', title: 'Пережил отмену Канга', desc: 'Все 4 фильма Мстителей и Quantumania',
+      check: s => ['avengers-1','ultron','infinity-war','endgame','quantumania'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['avengers-1','ultron','infinity-war','endgame','quantumania']) },
+    { id: 'multiverse-fan', icon: '🌀', title: 'Знаток мультивселенной', desc: 'No Way Home + Multiverse of Madness + Deadpool & Wolverine + Spider-Verse × 2',
+      check: s => ['no-way-home','ds-multiverse','deadpool-wolverine','nonmcu-spiderverse-2018','nonmcu-spiderverse-2023'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['no-way-home','ds-multiverse','deadpool-wolverine','nonmcu-spiderverse-2018','nonmcu-spiderverse-2023']) },
+
+    // ===== Полные коллекции канона MCU =====
+    { id: 'all-mcu-movies', icon: '🎞️', title: 'Все фильмы канона', desc: 'Просмотреть все вышедшие фильмы MCU',
+      check: s => {
+        const movies = ['iron-man-1','incredible-hulk','iron-man-2','thor-1','captain-america-1','avengers-1','iron-man-3','thor-2','winter-soldier','gotg-1','ultron','ant-man-1','civil-war','doctor-strange-1','gotg-2','spider-homecoming','ragnarok','black-panther-1','infinity-war','ant-man-2','captain-marvel','endgame','far-from-home','black-widow','shang-chi','eternals','no-way-home','ds-multiverse','love-thunder','wakanda-forever','quantumania','gotg-3','marvels','deadpool-wolverine','brave-new-world','thunderbolts','ff-first-steps'];
+        return movies.every(id => s.watched.has(id));
+      },
+      progress: s => {
+        const movies = ['iron-man-1','incredible-hulk','iron-man-2','thor-1','captain-america-1','avengers-1','iron-man-3','thor-2','winter-soldier','gotg-1','ultron','ant-man-1','civil-war','doctor-strange-1','gotg-2','spider-homecoming','ragnarok','black-panther-1','infinity-war','ant-man-2','captain-marvel','endgame','far-from-home','black-widow','shang-chi','eternals','no-way-home','ds-multiverse','love-thunder','wakanda-forever','quantumania','gotg-3','marvels','deadpool-wolverine','brave-new-world','thunderbolts','ff-first-steps'];
+        return progressFromIds(s, movies);
+      }},
+    { id: 'all-mcu-series', icon: '📡', title: 'Все сериалы канона', desc: 'Все сериалы и спецвыпуски MCU (Disney+)',
+      check: s => {
+        const series = ['wandavision','falcon-ws','loki-s1','hawkeye','moon-knight','ms-marvel','she-hulk','secret-invasion','loki-s2','echo','agatha','daredevil-ba-s1','ironheart','wonder-man','daredevil-ba-s2','werewolf','gotg-holiday'];
+        return series.every(id => s.watched.has(id));
+      },
+      progress: s => {
+        const series = ['wandavision','falcon-ws','loki-s1','hawkeye','moon-knight','ms-marvel','she-hulk','secret-invasion','loki-s2','echo','agatha','daredevil-ba-s1','ironheart','wonder-man','daredevil-ba-s2','werewolf','gotg-holiday'];
+        return progressFromIds(s, series);
+      }},
+    { id: 'animation-lover', icon: '🎨', title: 'Художник по душе', desc: 'Посмотреть всю анимацию MCU',
+      check: s => ['what-if-s1','what-if-s2','what-if-s3','i-am-groot-s1','i-am-groot-s2','xmen-97-s1','friendly-spider','eyes-wakanda','marvel-zombies'].every(id => s.watched.has(id)),
+      progress: s => progressFromIds(s, ['what-if-s1','what-if-s2','what-if-s3','i-am-groot-s1','i-am-groot-s2','xmen-97-s1','friendly-spider','eyes-wakanda','marvel-zombies']) },
+
+    // ===== Часы просмотра =====
+    { id: 'binge-100', icon: '🔥', title: '100 часов', desc: 'Просмотреть 100+ часов контента',
+      check: s => s.totalMins >= 6000,
+      progress: s => [Math.min(Math.floor(s.totalMins / 60), 100), 100] },
+    { id: 'binge-200', icon: '🌟', title: '200 часов', desc: 'Просмотреть 200+ часов контента',
+      check: s => s.totalMins >= 12000,
+      progress: s => [Math.min(Math.floor(s.totalMins / 60), 200), 200] },
+    { id: 'binge-300', icon: '💫', title: '300 часов', desc: 'Просмотреть 300+ часов контента',
+      check: s => s.totalMins >= 18000,
+      progress: s => [Math.min(Math.floor(s.totalMins / 60), 300), 300] },
+    { id: 'binge-400', icon: '🌌', title: '400 часов', desc: 'Просмотреть 400+ часов контента',
+      check: s => s.totalMins >= 24000,
+      progress: s => [Math.min(Math.floor(s.totalMins / 60), 400), 400] },
+
+    // ===== Финальные =====
+    { id: 'completionist', icon: '👑', title: 'Идеальная точность', desc: 'Закрыть весь канон MCU',
+      check: s => s.mcu.done === s.mcu.total && s.mcu.total > 0,
+      progress: s => [s.mcu.done, s.mcu.total] },
+    { id: 'watcher', icon: '👁️', title: 'ВАТЧЕР', desc: 'Закрыть АБСОЛЮТНО ВСЁ — канон, ретро и вне канона',
+      check: s => s.totalDone === s.totalAll && s.totalAll > 0,
+      progress: s => [s.totalDone, s.totalAll] },
+  ];
+
+  function updateAchievements() {
+    const mcu = getMcuStats();
+    const retro = getSectionStats(views.retro);
+    const noncanon = getSectionStats(views.noncanon);
+    const phases = {
+      p1: getPhaseStats('p1'),
+      p2: getPhaseStats('p2'),
+      p3: getPhaseStats('p3'),
+      p4: getPhaseStats('p4'),
+      p5: getPhaseStats('p5'),
+      p6: getPhaseStats('p6'),
+    };
+
+    const totalDone = mcu.done + retro.done + noncanon.done;
+    const totalAll = mcu.total + retro.total + noncanon.total;
+    const totalMins = mcu.doneMins + retro.doneMins + noncanon.doneMins;
+    const totalHours = Math.round(totalMins / 60);
+
+    const stats = { mcu, retro, noncanon, phases, totalDone, totalAll, totalMins, totalHours, watched };
+
+    // Главная карточка
+    const rank = getRank(totalDone);
+    const rankEl = document.getElementById('hero-rank');
+    const subEl = document.getElementById('hero-rank-sub');
+    if (rankEl) rankEl.textContent = rank.title;
+    if (subEl) subEl.textContent = rank.sub;
+    document.getElementById('stat-watched').textContent = totalDone;
+    document.getElementById('stat-mcu').textContent = mcu.total > 0 ? Math.round((mcu.done / mcu.total) * 100) + '%' : '0%';
+    document.getElementById('stat-hours').textContent = totalHours;
+    document.getElementById('stat-percent').textContent = totalAll > 0 ? Math.round((totalDone / totalAll) * 100) + '%' : '0%';
+
+    // Прогресс по разделам
+    setProgressBar('mcu', mcu.done, mcu.total);
+    setProgressBar('retro', retro.done, retro.total);
+    setProgressBar('noncanon', noncanon.done, noncanon.total);
+
+    // Прогресс по фазам
+    for (const p of ['p1','p2','p3','p4','p5','p6']) {
+      setProgressBar(p, phases[p].done, phases[p].total);
+    }
+
+    // Прогресс по подгруппам Вне канона и Ретро
+    const groups = ['spider-sony','ssu','xmen-fox','ff-fox','netflix','marvel-tv','classic-pre2008','other-anim','mau-90s','classic-other'];
+    for (const g of groups) {
+      const gs = getGroupStats(g);
+      setProgressBar(g, gs.done, gs.total);
+    }
+
+    // Ачивки
+    const grid = document.getElementById('achievements-grid');
+    if (grid) {
+      let unlocked = 0;
+      grid.innerHTML = ACHIEVEMENTS.map(a => {
+        const ok = a.check(stats);
+        if (ok) unlocked++;
+        const [cur, total] = a.progress ? a.progress(stats) : [ok ? 1 : 0, 1];
+        return `<div class="achievement${ok ? ' unlocked' : ''}">
+          <div class="achievement-progress">${cur} / ${total}</div>
+          <div class="achievement-icon">${a.icon}</div>
+          <div class="achievement-title">${a.title}</div>
+          <div class="achievement-desc">${a.desc}</div>
+        </div>`;
+      }).join('');
+      document.getElementById('ach-count').textContent = `${unlocked} / ${ACHIEVEMENTS.length}`;
+    }
+
+    // Интересные факты
+    const facts = [];
+    if (totalDone === 0) {
+      facts.push(`👋 <strong>Добро пожаловать!</strong> Поставь первую галочку — и приключение начнётся.`);
+    } else {
+      const days = (totalMins / 60 / 24).toFixed(1);
+      facts.push(`⏱️ Ты потратила <strong>${totalHours} часов</strong> на просмотр Marvel. Это примерно <strong>${days} дней</strong> непрерывного просмотра.`);
+
+      // Любимая фаза по числу просмотренных
+      let bestPhase = null, bestPct = 0;
+      const phaseNames = { p1: 'Фаза 1', p2: 'Фаза 2', p3: 'Фаза 3', p4: 'Фаза 4', p5: 'Фаза 5', p6: 'Фаза 6' };
+      for (const p of ['p1','p2','p3','p4','p5']) {
+        const ph = phases[p];
+        if (ph.total > 0) {
+          const pct = ph.done / ph.total;
+          if (pct > bestPct) { bestPct = pct; bestPhase = p; }
+        }
+      }
+      if (bestPhase && bestPct > 0) {
+        facts.push(`🎯 Лучший прогресс — <strong>${phaseNames[bestPhase]}</strong> (${Math.round(bestPct * 100)}%).`);
+      }
+
+      const mcuLeft = mcu.total - mcu.done;
+      if (mcuLeft > 0 && mcu.done > 0) {
+        const minsLeft = mcu.totalMins - mcu.doneMins;
+        const hoursLeft = Math.round(minsLeft / 60);
+        facts.push(`🎬 До завершения канона MCU осталось <strong>${mcuLeft} проектов</strong> (~${hoursLeft} ч).`);
+      }
+
+      if (mcu.done === mcu.total && mcu.total > 0) {
+        facts.push(`👑 <strong>Канон MCU полностью закрыт!</strong> Настоящий мститель.`);
+      }
+    }
+
+    document.getElementById('fun-facts').innerHTML = facts.map(f => `<div class="fun-fact">${f}</div>`).join('');
+  }
+  // ===== Конец достижений =====
+
+  function filter() {
+    const q = search.value.toLowerCase().trim();
+    let activeView = Object.values(views).find(v => !v.classList.contains('hidden'));
+    if (!activeView) return;
+    // Если активная вкладка — MCU, ищем только в видимой подсекции (release или chrono)
+    if (activeView.id === 'mcu-view') {
+      activeView = activeView.querySelector('.mcu-mode-pane.active') || activeView;
+    }
+    activeView.querySelectorAll('.item').forEach(item => {
+      const title = item.querySelector('.item-title').textContent.toLowerCase();
+      const ru = item.querySelector('.item-ru')?.textContent.toLowerCase() || '';
+      item.style.display = (title.includes(q) || ru.includes(q)) ? '' : 'none';
+    });
+  }
+
+  search.addEventListener('input', filter);
+  applyWatched();
+  renderAllRatings();
+  updateCounts();
+</script>
+</body>
+</html>

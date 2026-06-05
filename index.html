@@ -130,7 +130,7 @@
     letter-spacing: 0;
   }
   .retro-note {
-    margin-top: 14px;
+    margin: 14px 0;
     padding: 10px 14px;
     background: #161823;
     border: 1px dashed var(--border);
@@ -138,6 +138,18 @@
     color: var(--muted);
     font-size: 0.85em;
     line-height: 1.5;
+  }
+  #noncanon-view .retro-note::before,
+  #retro-view .retro-note::before {
+    content: "";
+    display: inline-block;
+    width: 1.05em;
+    height: 1.05em;
+    vertical-align: -0.18em;
+    margin-right: 7px;
+    background-color: var(--accent);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='12' y1='16' x2='12' y2='12'/%3E%3Cline x1='12' y1='8' x2='12.01' y2='8'/%3E%3C/svg%3E") center/contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='12' y1='16' x2='12' y2='12'/%3E%3Cline x1='12' y1='8' x2='12.01' y2='8'/%3E%3C/svg%3E") center/contain no-repeat;
   }
   .list { list-style: none; padding: 0; margin: 0; }
   .item {
@@ -154,7 +166,6 @@
   }
   .item:hover { background: var(--hover); }
   .item.watched { opacity: 0.4; }
-  .item.watched .item-title { text-decoration: line-through; text-decoration-color: var(--subtle); }
   .checkbox {
     width: 18px;
     height: 18px;
@@ -215,18 +226,19 @@
   .badge.special { background: #2e1e3a; color: #c08ef0; }
   .badge.anim { background: #1e3a2e; color: #8ef0c0; }
   .imdb-link {
-    background: #f5c518;
-    color: #000;
+    background: transparent;
+    color: #f5c518;
+    border: 1px solid #f5c518;
     padding: 3px 9px;
     border-radius: 4px;
     text-decoration: none;
     font-weight: 700;
     font-size: 0.78em;
     white-space: nowrap;
-    transition: opacity 0.2s;
+    transition: all 0.2s;
     flex-shrink: 0;
   }
-  .imdb-link:hover { opacity: 0.85; }
+  .imdb-link:hover { background: #f5c518; color: #000; }
   .hidden { display: none; }
   .count {
     color: var(--muted);
@@ -540,7 +552,7 @@
     line-height: 1.4;
   }
   .achievement.unlocked .achievement-progress {
-    background: var(--check);
+    background: linear-gradient(135deg, #f5c518 0%, #e3a008 100%);
     color: #0f1117;
   }
   .achievement-icon {
@@ -562,7 +574,7 @@
 
   .fun-fact {
     background: linear-gradient(135deg, #161823 0%, #1f1820 100%);
-    border-left: 3px solid var(--check);
+    border-left: 3px solid var(--accent);
     border-radius: 6px;
     padding: 10px 14px;
     margin-bottom: 10px;
@@ -707,6 +719,8 @@
       white-space: nowrap;
       flex-shrink: 0;
     }
+    /* На мобильном вкладка «Достижения» — только эмодзи, чтобы экономить место */
+    .tab-label-full { display: none; }
 
     /* Переключатель режимов на мобильном — на всю ширину */
     .mcu-mode-toggle {
@@ -826,7 +840,7 @@
     <button class="tab active" data-tab="mcu">Канон MCU</button>
     <button class="tab" data-tab="noncanon">Вне канона MCU</button>
     <button class="tab" data-tab="retro">Ретро-анимация</button>
-    <button class="tab" data-tab="achievements">🏆 Достижения</button>
+    <button class="tab" data-tab="achievements">🏆<span class="tab-label-full"> Достижения</span></button>
   </div>
 
   <input type="text" class="search" id="search" placeholder="🔍 Поиск (рус./англ.)...">
@@ -1028,7 +1042,7 @@
     <p class="count"><span id="retro-count"></span></p>
 
     <div class="retro-note">
-      📺 Классическая анимация Marvel, не входящая в официальный канон MCU. Большая часть — это «Marvel Animated Universe» 90-х, который происходит в общей вселенной Earth-92131 и стал предтечей современных супергеройских мультсериалов. X-Men '97 — прямой сиквел того самого «Людей Икс» 90-х.
+      Классическая анимация Marvel, не входящая в официальный канон MCU. Большая часть — это «Marvel Animated Universe» 90-х, который происходит в общей вселенной Earth-92131 и стал предтечей современных супергеройских мультсериалов. X-Men '97 — прямой сиквел того самого «Людей Икс» 90-х.
     </div>
 
     <div class="phase"><span>Marvel Animated Universe (90-е, Earth-92131)</span></div>
@@ -1065,7 +1079,7 @@
     <p class="count"><span id="noncanon-count"></span></p>
 
     <div class="retro-note">
-      🎭 Фильмы и сериалы про героев Marvel, которые НЕ входят в основной канон MCU: Sony-вселенная Человека-паука, Fox-овская X-Men франшиза до сделки с Disney, Netflix-сериалы (хотя их в 2024 году условно «канонизировали»), классические экранизации до 2008 года и другие проекты Marvel TV.
+      Фильмы и сериалы про героев Marvel, которые НЕ входят в основной канон MCU: Sony-вселенная Человека-паука, Fox-овская X-Men франшиза до сделки с Disney, Netflix-сериалы (хотя их в 2024 году условно «канонизировали»), классические экранизации до 2008 года и другие проекты Marvel TV.
     </div>
 
     <div class="phase"><span>Spider-Man (Sony, до MCU)</span></div>
@@ -1117,7 +1131,7 @@
 
     <div class="phase"><span>Marvel Netflix — The Defenders Saga</span></div>
     <div class="retro-note">
-      🦸 Эти сериалы — единая взаимосвязанная вселенная, рекомендуется смотреть по сезонам в порядке выхода (перемежая шоу), а не каждый сериал целиком. В 2024 году Marvel Studios официально признала их каноном MCU.
+      Эти сериалы — единая взаимосвязанная вселенная, рекомендуется смотреть по сезонам в порядке выхода (перемежая шоу), а не каждый сериал целиком. В 2024 году Marvel Studios официально признала их каноном MCU.
     </div>
     <ul class="list" data-group="netflix">
       <li class="item" data-id="nonmcu-dd-s1" data-mins="767"><button class="checkbox"></button><div class="item-main"><span class="item-title">Daredevil (Сезон 1)</span><span class="item-ru">Сорвиголова</span><span class="badge tv">Сериал</span><span class="item-meta">апр 2015</span></div><span class="item-runtime">~12 ч 47 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Daredevil+Netflix+season+1">IMDb</a></li>
@@ -1137,7 +1151,7 @@
 
     <div class="phase"><span>Marvel Television (ABC / Hulu / Freeform)</span></div>
     <div class="retro-note">
-      📺 Эти сериалы делало отдельное подразделение Marvel TV (не Marvel Studios), и Кевин Файги к ним не имел отношения. Marvel Studios официально <strong>не признаёт их каноном MCU</strong> — хотя ранние сезоны Agents of S.H.I.E.L.D. напрямую пересекались с фильмами. В Daredevil: Born Again S2 (2026) впервые за 12 лет появилась отсылка к AoS, так что ситуация может ещё измениться.
+      Эти сериалы делало отдельное подразделение Marvel TV (не Marvel Studios), и Кевин Файги к ним не имел отношения. Marvel Studios официально <strong>не признаёт их каноном MCU</strong> — хотя ранние сезоны Agents of S.H.I.E.L.D. напрямую пересекались с фильмами. В Daredevil: Born Again S2 (2026) впервые за 12 лет появилась отсылка к AoS, так что ситуация может ещё измениться.
     </div>
     <ul class="list" data-group="marvel-tv">
       <li class="item" data-id="nonmcu-aos-s1" data-mins="990"><button class="checkbox"></button><div class="item-main"><span class="item-title">Agents of S.H.I.E.L.D. (Сезон 1)</span><span class="item-ru">Агенты Щ.И.Т. — параллельно Winter Soldier</span><span class="badge tv">Сериал</span><span class="item-meta">2013–2014</span></div><span class="item-runtime">~16 ч 30 м</span><a class="imdb-link" target="_blank" href="https://www.imdb.com/find/?q=Agents+of+SHIELD+season+1">IMDb</a></li>
@@ -1220,21 +1234,21 @@
       <div class="progress-section-title">📊 Прогресс по разделам</div>
       <div class="progress-row">
         <div class="progress-header">
-          <span class="progress-name">Канон MCU 🦸</span>
+          <span class="progress-name">Канон MCU</span>
           <span class="progress-meta" id="prog-mcu-meta"></span>
         </div>
         <div class="progress-bar"><div class="progress-fill" id="prog-mcu" style="width:0%"></div></div>
       </div>
       <div class="progress-row">
         <div class="progress-header">
-          <span class="progress-name">Вне канона MCU 🎭</span>
+          <span class="progress-name">Вне канона MCU</span>
           <span class="progress-meta" id="prog-noncanon-meta"></span>
         </div>
         <div class="progress-bar"><div class="progress-fill" id="prog-noncanon" style="width:0%"></div></div>
       </div>
       <div class="progress-row">
         <div class="progress-header">
-          <span class="progress-name">Ретро-анимация 📺</span>
+          <span class="progress-name">Ретро-анимация</span>
           <span class="progress-meta" id="prog-retro-meta"></span>
         </div>
         <div class="progress-bar"><div class="progress-fill" id="prog-retro" style="width:0%"></div></div>
@@ -1391,7 +1405,7 @@
   let ratings = loadRatings();
 
   function formatMinutes(mins) {
-    if (mins <= 0) return '—';
+    if (mins <= 0) return '0 ч';
     const h = Math.floor(mins / 60);
     const m = mins % 60;
     if (h === 0) return `${m} м`;
@@ -1562,7 +1576,8 @@
     for (let i = 1; i <= 10; i++) buckets[i] = 0;
     vals.forEach(v => { const k = Math.round(v); if (buckets[k] !== undefined) buckets[k]++; });
     const maxCount = Math.max(...Object.values(buckets));
-    const RATING_COLORS = ['#ef4444','#f97316','#f59e0b','#eab308','#a855f7','#6366f1','#3b82f6','#14b8a6','#22c55e','#16a34a'];
+    // Цвет столбика по качеству оценки: низкие — красно-оранжевые, высокие — зелёные
+    const RATING_COLORS = ['#ef4444','#f9663c','#f97316','#f59e0b','#eab308','#c8c70f','#9bcb15','#5fc230','#33c14e','#22c55e'];
 
     let cols = '';
     for (let v = 1; v <= 10; v++) {
